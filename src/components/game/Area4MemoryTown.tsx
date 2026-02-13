@@ -14,6 +14,12 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
+const PHOTOS = [
+  '/photos/photo1.jpg', '/photos/photo2.jpg', '/photos/photo3.jpg', '/photos/photo4.jpg',
+  '/photos/photo5.jpg', '/photos/photo6.jpg', '/photos/photo7.jpg', '/photos/photo8.jpg',
+  '/photos/photo9.jpg', '/photos/photo10.jpg', '/photos/photo1.jpg', '/photos/photo2.jpg',
+];
+
 const CAPTIONS = [
   "Memory unlocked", "She smiled, and his world got brighter", "Same sky, same heart",
   "Distance means nothing when love is everything", "Every moment with you is my favorite",
@@ -66,11 +72,8 @@ export default function Area4MemoryTown({ unlocked, housesOpened, housesNeeded, 
       {selectedHouse !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm p-6" onClick={() => setSelectedHouse(null)}>
           <div className="bg-card rounded-lg pixel-border p-4 max-w-xs w-full animate-slide-up" onClick={e => e.stopPropagation()}>
-            <div className="aspect-square bg-muted/30 rounded-lg pixel-border-sm flex items-center justify-center mb-3">
-              <div className="text-center flex flex-col items-center gap-2">
-                <PixelCamera size={5} />
-                <span className="font-pixel text-[7px] text-muted-foreground">Photo #{selectedHouse + 1}</span>
-              </div>
+            <div className="aspect-square rounded-lg pixel-border-sm overflow-hidden mb-3">
+              <img src={PHOTOS[selectedHouse]} alt={`Memory #${selectedHouse + 1}`} className="w-full h-full object-cover" />
             </div>
             <p className="font-pixel text-[8px] text-pixel-pink text-center leading-relaxed">{CAPTIONS[selectedHouse]}</p>
             <button onClick={() => setSelectedHouse(null)} className="mt-4 w-full font-pixel text-[8px] bg-primary/20 text-foreground py-2 rounded-lg active:scale-95 transition-transform flex items-center justify-center gap-1">
