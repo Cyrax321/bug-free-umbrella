@@ -244,14 +244,14 @@ export function PixelArrowDown({ size = 4, className = '' }: { size?: number; cl
 
 // ---- BUBA (kawaii chibi girl) ----
 export function PixelBuba({ size = 3, className = '' }: { size?: number; className?: string }) {
-  const px = size * 16;
-  return <img src={bubaImg} alt="Buba" className={`inline-block ${className}`} style={{ width: px, height: 'auto', imageRendering: 'pixelated' }} />;
+  const w = size * 24;
+  return <img src={bubaImg} alt="Buba" className={`inline-block ${className}`} style={{ width: w, height: 'auto' }} />;
 }
 
 // ---- BUBIBU (kawaii chibi boy) ----
 export function PixelBubibu({ size = 3, className = '' }: { size?: number; className?: string }) {
-  const px = size * 16;
-  return <img src={bubibuImg} alt="Bubibu" className={`inline-block ${className}`} style={{ width: px, height: 'auto', imageRendering: 'pixelated' }} />;
+  const w = size * 24;
+  return <img src={bubibuImg} alt="Bubibu" className={`inline-block ${className}`} style={{ width: w, height: 'auto' }} />;
 }
 
 // ---- RAINDROP ----
