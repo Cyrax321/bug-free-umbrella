@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { useGameState } from '@/hooks/useGameState';
+import { useNarration } from '@/hooks/useNarration';
 import StartScreen from '@/components/game/StartScreen';
 import Area1Bedroom from '@/components/game/Area1Bedroom';
 import Area2Garden from '@/components/game/Area2Garden';
@@ -13,6 +14,7 @@ const Index = () => {
     state,
     startGame,
     toggleSound,
+    toggleNarration,
     collectHeart,
     collectPetal,
     addBridgePiece,
@@ -27,13 +29,21 @@ const Index = () => {
     LANTERNS_NEEDED,
   } = useGameState();
 
+  const { playNarration, isPlaying: isNarrationPlaying, isLoading: isNarrationLoading } = useNarration();
+
+  const narrationProps = {
+    narrationEnabled: state.narrationEnabled,
+    onPlayNarration: playNarration,
+    isNarrationPlaying,
+    isNarrationLoading,
+  };
+
   const area2Ref = useRef<HTMLDivElement>(null);
   const area3Ref = useRef<HTMLDivElement>(null);
   const area4Ref = useRef<HTMLDivElement>(null);
   const area5Ref = useRef<HTMLDivElement>(null);
   const area6Ref = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll when areas complete
   useEffect(() => {
     if (state.area1Complete) area2Ref.current?.scrollIntoView({ behavior: 'smooth' });
   }, [state.area1Complete]);
@@ -51,7 +61,15 @@ const Index = () => {
   }, [state.area5Complete]);
 
   if (!state.started) {
-    return <StartScreen soundEnabled={state.soundEnabled} onToggleSound={toggleSound} onStart={startGame} />;
+    return (
+      <StartScreen
+        soundEnabled={state.soundEnabled}
+        narrationEnabled={state.narrationEnabled}
+        onToggleSound={toggleSound}
+        onToggleNarration={toggleNarration}
+        onStart={startGame}
+      />
+    );
   }
 
   return (
@@ -61,6 +79,7 @@ const Index = () => {
         heartsNeeded={HEARTS_NEEDED}
         complete={state.area1Complete}
         onCollectHeart={collectHeart}
+        {...narrationProps}
       />
       <div ref={area2Ref}>
         <Area2Garden
@@ -69,6 +88,7 @@ const Index = () => {
           petalsNeeded={PETALS_NEEDED}
           complete={state.area2Complete}
           onCollectPetal={collectPetal}
+          {...narrationProps}
         />
       </div>
       <div ref={area3Ref}>
@@ -78,6 +98,7 @@ const Index = () => {
           bridgePiecesNeeded={BRIDGE_PIECES_NEEDED}
           complete={state.area3Complete}
           onAddPiece={addBridgePiece}
+          {...narrationProps}
         />
       </div>
       <div ref={area4Ref}>
@@ -87,6 +108,7 @@ const Index = () => {
           housesNeeded={HOUSES_NEEDED}
           complete={state.area4Complete}
           onOpenHouse={openHouse}
+          {...narrationProps}
         />
       </div>
       <div ref={area5Ref}>
@@ -94,6 +116,7 @@ const Index = () => {
           unlocked={state.area4Complete}
           complete={state.area5Complete}
           onSync={syncHearts}
+          {...narrationProps}
         />
       </div>
       <div ref={area6Ref}>
@@ -104,6 +127,7 @@ const Index = () => {
           wishMade={state.wishMade}
           onLightLantern={lightLantern}
           onMakeWish={makeWish}
+          {...narrationProps}
         />
       </div>
     </main>
