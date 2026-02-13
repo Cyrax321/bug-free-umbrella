@@ -317,3 +317,43 @@ const WINDOW_GRID = [
 export function PixelWindow({ size = 6, className = '' }: { size?: number; className?: string }) {
   return <PixelGrid grid={WINDOW_GRID} size={size} className={className} />;
 }
+
+// ---- KNIFE (for cake cutting) ----
+const KNIFE_GRID = [
+  ['_','_','_','_','#ccc'],
+  ['_','_','_','#ccc','#eee'],
+  ['_','_','#ccc','#eee','_'],
+  ['_','#8B6914','#ccc','_','_'],
+  ['#8B6914','#a67c24','_','_','_'],
+  ['#8B6914','_','_','_','_'],
+];
+
+export function PixelKnife({ size = 3, className = '' }: { size?: number; className?: string }) {
+  return <PixelGrid grid={KNIFE_GRID} size={size} className={className} />;
+}
+
+// ---- ENVELOPE ----
+const ENVELOPE_GRID = [
+  ['#e85d75','_','_','_','_','_','#e85d75'],
+  ['_','#e85d75','_','_','_','#e85d75','_'],
+  ['#f7c4d0','_','#e85d75','_','#e85d75','_','#f7c4d0'],
+  ['#f7c4d0','#f7c4d0','_','#e85d75','_','#f7c4d0','#f7c4d0'],
+  ['#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0'],
+];
+
+export function PixelEnvelope({ size = 4, className = '' }: { size?: number; className?: string }) {
+  return <PixelGrid grid={ENVELOPE_GRID} size={size} className={className} />;
+}
+
+// ---- RIBBON ----
+const RIBBON_GRID = [
+  ['#e85d75','_','_','_','#e85d75'],
+  ['_','#e85d75','_','#e85d75','_'],
+  ['_','_','#ffd966','_','_'],
+  ['_','#e85d75','_','#e85d75','_'],
+  ['#e85d75','_','_','_','#e85d75'],
+];
+
+export function PixelRibbon({ size = 3, className = '' }: { size?: number; className?: string }) {
+  return <PixelGrid grid={RIBBON_GRID} size={size} className={className} />;
+}
