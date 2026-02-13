@@ -28,8 +28,8 @@ Deno.serve(async (req) => {
       });
     }
 
-    // Use Laura voice by default - warm and soft
-    const selectedVoice = voiceId || "FGY2WhTYpPnrIDTdsKH5";
+    // Use Lily voice - high-pitched and bubbly, closest to "Lulu Lolipop"
+    const selectedVoice = voiceId || "pFZP5JQG7iQjIQuC4Bku";
 
     const response = await fetch(
       `https://api.elevenlabs.io/v1/text-to-speech/${selectedVoice}?output_format=mp3_44100_128`,
@@ -43,11 +43,11 @@ Deno.serve(async (req) => {
           text,
           model_id: "eleven_multilingual_v2",
           voice_settings: {
-            stability: 0.65,
-            similarity_boost: 0.75,
-            style: 0.4,
+            stability: 0.5,
+            similarity_boost: 0.8,
+            style: 0.6,
             use_speaker_boost: true,
-            speed: 0.9,
+            speed: 0.85,
           },
         }),
       }

@@ -12,7 +12,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "Another rainy night... Bubibu stares at the ceiling, thinking of Buba.";
+const NARRATIVE = "Outside, the rain sings a gentle lullaby against the cherry blossom petals... Bubibu hugs his little pillow shaped like a heart, watching tiny raindrops race down the window. Each drop reminds him of Buba's giggle. He whispers to the moon, 'I hope she's looking at the same sky tonight...' The stars blink back, as if to say, 'She is, silly. She always is.' 🌸";
 
 export default function Area1Bedroom({ heartsCollected, heartsNeeded, complete, onCollectHeart, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [tapped, setTapped] = useState<Set<number>>(new Set());
