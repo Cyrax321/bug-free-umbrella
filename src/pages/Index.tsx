@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { useGameState } from '@/hooks/useGameState';
 import { useNarration } from '@/hooks/useNarration';
+import { useBackgroundMusic } from '@/hooks/useBackgroundMusic';
 import StartScreen from '@/components/game/StartScreen';
 import Area1Bedroom from '@/components/game/Area1Bedroom';
 import Area2Garden from '@/components/game/Area2Garden';
@@ -30,6 +31,7 @@ const Index = () => {
   } = useGameState();
 
   const { playNarration, isPlaying: isNarrationPlaying, isLoading: isNarrationLoading } = useNarration();
+  const bgMusic = useBackgroundMusic();
 
   const narrationProps = {
     narrationEnabled: state.narrationEnabled,
@@ -67,7 +69,13 @@ const Index = () => {
         narrationEnabled={state.narrationEnabled}
         onToggleSound={toggleSound}
         onToggleNarration={toggleNarration}
-        onStart={startGame}
+        onStart={() => {
+          startGame();
+          if (state.soundEnabled) bgMusic.generateAndPlay();
+        }}
+        musicPlaying={bgMusic.isPlaying}
+        musicLoading={bgMusic.isLoading}
+        onToggleMusic={bgMusic.toggle}
       />
     );
   }
