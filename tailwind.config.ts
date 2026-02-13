@@ -47,15 +47,17 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        pixel: {
+          pink: "hsl(var(--pixel-pink))",
+          lavender: "hsl(var(--pixel-lavender))",
+          peach: "hsl(var(--pixel-peach))",
+          dark: "hsl(var(--pixel-dark))",
+          night: "hsl(var(--pixel-night))",
+          garden: "hsl(var(--pixel-garden))",
+          gold: "hsl(var(--pixel-gold))",
+          sky: "hsl(var(--pixel-sky))",
+          sunset: "hsl(var(--pixel-sunset))",
+          glow: "hsl(var(--pixel-glow))",
         },
       },
       borderRadius: {
@@ -63,22 +65,18 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        pixel: ['"Press Start 2P"', 'cursive'],
+        body: ['Quicksand', 'sans-serif'],
+      },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
