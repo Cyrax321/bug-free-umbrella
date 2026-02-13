@@ -13,7 +13,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "Every petal that falls reminds him of her laugh.";
+const NARRATIVE = "The garden blooms in soft pinks and lavenders, like a painting from a dream Bubibu once had about Buba. Cherry blossom petals drift lazily through the warm breeze, each one carrying a tiny wish. 'If I catch enough petals,' Bubibu thinks, 'maybe they'll weave a path straight to her heart.' The flowers seem to lean closer, whispering, 'She planted these for you, you know... every single one.' 🌸🌿";
 
 export default function Area2Garden({ unlocked, petalsCollected, petalsNeeded, complete, onCollectPetal, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [tapped, setTapped] = useState<Set<number>>(new Set());

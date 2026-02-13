@@ -11,7 +11,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "Two hearts, miles apart... beating for the same thing.";
+const NARRATIVE = "In the ancient Heart Sync Temple, cherry blossoms grow through the stone floors and the air shimmers with soft golden light. Legend says that when two hearts beat as one, the temple doors will open to reveal the path to eternal togetherness. Buba's heart beats with warmth, and Bubibu's beats with longing. 'Can you feel it?' the temple whispers. 'You've always been in rhythm... you just forgot to listen.' 💖✨";
 
 export default function Area5Temple({ unlocked, complete, onSync, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [leftPhase, setLeftPhase] = useState(0);

@@ -26,7 +26,7 @@ const HOUSE_COLORS = [
   'bg-pixel-gold/15', 'bg-pixel-sky/15', 'bg-pixel-pink/25', 'bg-pixel-lavender/25',
 ];
 
-const NARRATIVE = "Each house holds a piece of us — same heart, different rooms.";
+const NARRATIVE = "Welcome to the coziest little village in the world, where every tiny house holds a precious memory of Buba and Bubibu. Paper lanterns sway gently along the cobblestone path, and the sweet scent of cherry blossoms fills the evening air. 'Do you remember this one?' Bubibu asks the moon. 'That was the day she laughed so hard she got hiccups, and I fell in love all over again.' Each door hides a treasure. 🏮🌸";
 
 export default function Area4MemoryTown({ unlocked, housesOpened, housesNeeded, complete, onOpenHouse, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [selectedHouse, setSelectedHouse] = useState<number | null>(null);

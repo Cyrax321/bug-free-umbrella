@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "Bubibu made a wish. And it was always the same — Buba, right here, next to him.";
+const NARRATIVE = "At the very top of Valentine Hill, where the sunset paints the sky in shades of strawberry and peach, a tiny picnic blanket waits under a canopy of cherry blossoms. Bubibu has arranged everything perfectly — flowers picked from the garden, a little cake with heart-shaped candles, and two cups of warm cocoa. He closes his eyes and makes the same wish he's made a thousand times before: 'Buba, right here, next to me... forever and always.' The cherry petals dance in the golden light, and somewhere, Buba smiles. 🌅💖🌸";
 
 export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeeded, wishMade, onLightLantern, onMakeWish, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [celebrationActive, setCelebrationActive] = useState(false);

@@ -13,7 +13,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "The distance feels far... but never too far for Buba and Bubibu.";
+const NARRATIVE = "Between two gentle hills, a bridge once stood where Buba and Bubibu would meet under the cherry blossoms every spring. The wind scattered its pieces like puzzle hearts across the starlit sky. But love is patient, and love is brave. 'Even if every bridge in the world breaks,' Bubibu says with a smile, 'I'd build a thousand more just to reach you, Buba.' The stars twinkle in agreement. 🌙💫";
 
 export default function Area3Bridge({ unlocked, bridgePieces, bridgePiecesNeeded, complete, onAddPiece, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [placed, setPlaced] = useState<Set<number>>(new Set());
