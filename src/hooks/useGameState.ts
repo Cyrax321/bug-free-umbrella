@@ -36,7 +36,7 @@ export interface GameState {
 const initialState: GameState = {
   started: false,
   soundEnabled: true,
-  narrationEnabled: true,
+  narrationEnabled: false,
   area1Complete: false,
   area1bComplete: false,
   area2Complete: false,
