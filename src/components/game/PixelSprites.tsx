@@ -238,53 +238,61 @@ export function PixelArrowDown({ size = 4, className = '' }: { size?: number; cl
   return <PixelGrid grid={ARROW_GRID} size={size} className={className} />;
 }
 
-// ---- BUBA (girl - chibi with big sparkly eyes, pink bow, rosy cheeks, tiny smile, flowy dress) ----
+// ---- BUBA (kawaii chibi girl - bear ears, flowing pink hair, sparkly eyes, lavender dress with bow) ----
 const BUBA_GRID = [
-  ['_','_','_','_','#e85d75','#fde4ec','#e85d75','_','_','_','_','_'],
-  ['_','_','_','#e85d75','#fde4ec','#fde4ec','#fde4ec','#e85d75','_','_','_','_'],
-  ['_','_','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','_','_','_'],
-  ['_','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','_','_'],
-  ['_','#4a3728','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#4a3728','_','_'],
-  ['#4a3728','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#4a3728','_'],
-  ['#4a3728','#fde4ec','#222','#88ddff','_','#fde4ec','_','#222','#88ddff','#fde4ec','#4a3728','_'],
-  ['#4a3728','#fde4ec','#222','#222','_','#fde4ec','_','#222','#222','#fde4ec','#4a3728','_'],
-  ['_','#f7a0b0','#fde4ec','_','_','#fde4ec','_','_','#fde4ec','#f7a0b0','_','_'],
-  ['_','_','#fde4ec','_','_','#e85d75','_','_','#fde4ec','_','_','_'],
-  ['_','_','_','#fde4ec','#fde4ec','_','#fde4ec','#fde4ec','_','_','_','_'],
-  ['_','_','_','_','#f7c4d0','#f7c4d0','#f7c4d0','_','_','_','_','_'],
-  ['_','_','_','#f7c4d0','#fde4ec','#e85d75','#fde4ec','#f7c4d0','_','_','_','_'],
-  ['_','_','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','_','_','_'],
-  ['_','#f7c4d0','#fde4ec','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#fde4ec','#f7c4d0','_','_','_'],
-  ['_','_','_','#fde4ec','_','_','_','#fde4ec','_','_','_','_'],
-  ['_','_','_','#f7c4d0','_','_','_','#f7c4d0','_','_','_','_'],
+  ['_','_','_','_','#f7c4d0','#f7c4d0','_','_','_','_','#f7c4d0','#f7c4d0','_','_','_','_'],
+  ['_','_','_','#f7c4d0','#fde4ec','#fde4ec','#f7c4d0','_','_','#f7c4d0','#fde4ec','#fde4ec','#f7c4d0','_','_','_'],
+  ['_','_','_','#f7c4d0','#fde4ec','#fde4ec','#f7c4d0','_','_','#f7c4d0','#fde4ec','#fde4ec','#f7c4d0','_','_','_'],
+  ['_','_','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','#f7c4d0','_','_'],
+  ['_','#f7c4d0','#f7c4d0','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#f7c4d0','#f7c4d0','_'],
+  ['#f7c4d0','#f7c4d0','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#f7c4d0','#f7c4d0'],
+  ['#f7c4d0','#f7c4d0','#fde4ec','#fde4ec','#fde4ec','#fff','#fff','#fde4ec','#fde4ec','#fff','#fff','#fde4ec','#fde4ec','#fde4ec','#f7c4d0','#f7c4d0'],
+  ['#f7c4d0','#fde4ec','#ffe4ec','_','_','#fde4ec','_','_','_','_','#fde4ec','_','_','#ffe4ec','#fde4ec','#f7c4d0'],
+  ['#f7c4d0','#fde4ec','#ffe4ec','#6b3a2a','#6b3a2a','#fde4ec','_','_','_','_','#fde4ec','#6b3a2a','#6b3a2a','#ffe4ec','#fde4ec','#f7c4d0'],
+  ['#f7c4d0','#fde4ec','#ffe4ec','#6b3a2a','#fff','#fde4ec','_','_','_','_','#fde4ec','#6b3a2a','#fff','#ffe4ec','#fde4ec','#f7c4d0'],
+  ['_','#f7c4d0','#fde4ec','_','_','#f7a0b0','#fde4ec','_','_','#fde4ec','#f7a0b0','_','_','#fde4ec','#f7c4d0','_'],
+  ['_','#f7c4d0','#fde4ec','#fde4ec','_','_','_','#e85d75','#e85d75','_','_','_','#fde4ec','#fde4ec','#f7c4d0','_'],
+  ['_','#f7c4d0','_','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','_','#f7c4d0','_'],
+  ['_','#f7c4d0','_','_','_','_','#fde4ec','#fde4ec','#fde4ec','_','_','_','_','_','#f7c4d0','_'],
+  ['_','#f7c4d0','_','_','_','#c4b0d8','#c4b0d8','#c4b0d8','#c4b0d8','#c4b0d8','_','_','_','_','#f7c4d0','_'],
+  ['_','_','#f7c4d0','_','#c4b0d8','#d8c8e8','#e85d75','#fde4ec','#e85d75','#d8c8e8','#c4b0d8','_','_','#f7c4d0','_','_'],
+  ['_','_','#f7c4d0','_','#c4b0d8','#d8c8e8','#d8c8e8','#d8c8e8','#d8c8e8','#d8c8e8','#c4b0d8','_','_','#f7c4d0','_','_'],
+  ['_','_','_','#f7c4d0','#c4b0d8','#d8c8e8','#d8c8e8','#d8c8e8','#d8c8e8','#d8c8e8','#c4b0d8','#f7c4d0','_','_','_','_'],
+  ['_','_','_','_','_','#c4b0d8','#d8c8e8','#d8c8e8','#d8c8e8','#c4b0d8','_','_','_','_','_','_'],
+  ['_','_','_','_','_','_','#fde4ec','_','#fde4ec','_','_','_','_','_','_','_'],
+  ['_','_','_','_','_','_','#f7c4d0','_','#f7c4d0','_','_','_','_','_','_','_'],
 ];
 
-export function PixelBuba({ size = 4, className = '' }: { size?: number; className?: string }) {
+export function PixelBuba({ size = 3, className = '' }: { size?: number; className?: string }) {
   return <PixelGrid grid={BUBA_GRID} size={size} className={className} />;
 }
 
-// ---- BUBIBU (boy - chibi with big sparkly eyes, blue beanie, rosy cheeks, cozy sweater) ----
+// ---- BUBIBU (kawaii chibi boy - bear ears, blue hoodie, sparkly eyes, cozy outfit) ----
 const BUBIBU_GRID = [
-  ['_','_','_','#5b9bd5','#5b9bd5','#5b9bd5','#5b9bd5','#5b9bd5','_','_','_','_'],
-  ['_','_','#5b9bd5','#5b9bd5','#87ceeb','#5b9bd5','#87ceeb','#5b9bd5','#5b9bd5','_','_','_'],
-  ['_','_','#5b9bd5','#87ceeb','#fff','#5b9bd5','#fff','#87ceeb','#5b9bd5','_','_','_'],
-  ['_','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','#4a3728','_','_'],
-  ['_','#4a3728','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#4a3728','_','_'],
-  ['#4a3728','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#4a3728','_'],
-  ['#4a3728','#fde4ec','#222','#88ddff','_','#fde4ec','_','#222','#88ddff','#fde4ec','#4a3728','_'],
-  ['#4a3728','#fde4ec','#222','#222','_','#fde4ec','_','#222','#222','#fde4ec','#4a3728','_'],
-  ['_','#f7a0b0','#fde4ec','_','_','#fde4ec','_','_','#fde4ec','#f7a0b0','_','_'],
-  ['_','_','#fde4ec','_','_','#e85d75','_','_','#fde4ec','_','_','_'],
-  ['_','_','_','#fde4ec','#fde4ec','_','#fde4ec','#fde4ec','_','_','_','_'],
-  ['_','_','_','_','#5b9bd5','#5b9bd5','#5b9bd5','_','_','_','_','_'],
-  ['_','_','_','#5b9bd5','#fde4ec','#e85d75','#fde4ec','#5b9bd5','_','_','_','_'],
-  ['_','_','#5b9bd5','#5b9bd5','#5b9bd5','#5b9bd5','#5b9bd5','#5b9bd5','#5b9bd5','_','_','_'],
-  ['_','#5b9bd5','#fde4ec','#5b9bd5','#5b9bd5','#5b9bd5','#5b9bd5','#fde4ec','#5b9bd5','_','_','_'],
-  ['_','_','_','#fde4ec','_','_','_','#fde4ec','_','_','_','_'],
-  ['_','_','_','#5b9bd5','_','_','_','#5b9bd5','_','_','_','_'],
+  ['_','_','_','_','#87ceeb','#87ceeb','_','_','_','_','#87ceeb','#87ceeb','_','_','_','_'],
+  ['_','_','_','#87ceeb','#b8e0f7','#b8e0f7','#87ceeb','_','_','#87ceeb','#b8e0f7','#b8e0f7','#87ceeb','_','_','_'],
+  ['_','_','_','#87ceeb','#b8e0f7','#b8e0f7','#87ceeb','_','_','#87ceeb','#b8e0f7','#b8e0f7','#87ceeb','_','_','_'],
+  ['_','_','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#87ceeb','_','_'],
+  ['_','#87ceeb','#87ceeb','#b8e0f7','#b8e0f7','#b8e0f7','#b8e0f7','#b8e0f7','#b8e0f7','#b8e0f7','#b8e0f7','#b8e0f7','#b8e0f7','#87ceeb','#87ceeb','_'],
+  ['_','_','#87ceeb','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#87ceeb','_','_'],
+  ['_','_','_','#fde4ec','#fde4ec','#fff','#fff','#fde4ec','#fde4ec','#fff','#fff','#fde4ec','#fde4ec','_','_','_'],
+  ['_','_','_','_','_','#fde4ec','_','_','_','_','#fde4ec','_','_','_','_','_'],
+  ['_','_','_','_','#6b3a2a','#6b3a2a','#fde4ec','_','_','#fde4ec','#6b3a2a','#6b3a2a','_','_','_','_'],
+  ['_','_','_','_','#6b3a2a','#fff','#fde4ec','_','_','#fde4ec','#6b3a2a','#fff','_','_','_','_'],
+  ['_','_','_','_','_','#f7a0b0','#fde4ec','_','_','#fde4ec','#f7a0b0','_','_','_','_','_'],
+  ['_','_','_','_','#fde4ec','_','_','#e85d75','#e85d75','_','_','#fde4ec','_','_','_','_'],
+  ['_','_','_','_','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','#fde4ec','_','_','_','_'],
+  ['_','_','_','_','_','_','#fde4ec','#fde4ec','#fde4ec','_','_','_','_','_','_','_'],
+  ['_','_','_','_','_','#5b9bd5','#5b9bd5','#5b9bd5','#5b9bd5','#5b9bd5','_','_','_','_','_','_'],
+  ['_','_','_','_','#5b9bd5','#87ceeb','#e85d75','#fde4ec','#e85d75','#87ceeb','#5b9bd5','_','_','_','_','_'],
+  ['_','_','_','_','#5b9bd5','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#5b9bd5','_','_','_','_','_'],
+  ['_','_','_','_','#5b9bd5','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#87ceeb','#5b9bd5','_','_','_','_','_'],
+  ['_','_','_','_','_','#5b9bd5','#87ceeb','#87ceeb','#87ceeb','#5b9bd5','_','_','_','_','_','_'],
+  ['_','_','_','_','_','_','#fde4ec','_','#fde4ec','_','_','_','_','_','_','_'],
+  ['_','_','_','_','_','_','#5b9bd5','_','#5b9bd5','_','_','_','_','_','_','_'],
 ];
 
-export function PixelBubibu({ size = 4, className = '' }: { size?: number; className?: string }) {
+export function PixelBubibu({ size = 3, className = '' }: { size?: number; className?: string }) {
   return <PixelGrid grid={BUBIBU_GRID} size={size} className={className} />;
 }
 
