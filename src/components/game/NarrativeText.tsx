@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Volume2, Loader2 } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Volume2, VolumeX, Loader2 } from 'lucide-react';
 
 interface NarrativeTextProps {
   text: string;
@@ -14,11 +14,25 @@ interface NarrativeTextProps {
 export default function NarrativeText({ text, visible, className = '', narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: NarrativeTextProps) {
   const [displayed, setDisplayed] = useState('');
   const [done, setDone] = useState(false);
+  const hasTriggered = useRef(false);
 
   useEffect(() => {
-    if (!visible) { setDisplayed(''); setDone(false); return; }
+    if (!visible) { setDisplayed(''); setDone(false); hasTriggered.current = false; return; }
     setDisplayed('');
     setDone(false);
+    hasTriggered.current = false;
+
+    // Auto-trigger narration immediately when text becomes visible
+    if (narrationEnabled && onPlayNarration) {
+      // Small delay to let the component mount, then start voice
+      setTimeout(() => {
+        if (!hasTriggered.current) {
+          hasTriggered.current = true;
+          onPlayNarration(text);
+        }
+      }, 300);
+    }
+
     let i = 0;
     const interval = setInterval(() => {
       i++;
@@ -33,13 +47,14 @@ export default function NarrativeText({ text, visible, className = '', narration
   return (
     <div className={`relative font-pixel text-xs sm:text-sm leading-relaxed text-foreground/90 px-4 py-3 bg-muted/60 rounded-lg pixel-border-sm max-w-xs mx-auto ${className}`}>
       <em>"{displayed}{!done && <span className="inline-block w-2 h-3 bg-pixel-pink ml-0.5" style={{ animation: 'typewriter-cursor 0.8s steps(1) infinite' }} />}"</em>
-      {done && narrationEnabled && onPlayNarration && (
+      {done && onPlayNarration && (
         <button
           onClick={() => onPlayNarration(text)}
           disabled={isNarrationPlaying || isNarrationLoading}
           className="absolute -bottom-3 right-2 bg-pixel-pink/80 text-primary-foreground rounded-full w-7 h-7 flex items-center justify-center active:scale-90 transition-transform"
+          title={isNarrationPlaying ? 'Playing...' : 'Replay narration'}
         >
-          {isNarrationLoading ? <Loader2 size={14} className="animate-spin" /> : <Volume2 size={14} />}
+          {isNarrationLoading ? <Loader2 size={14} className="animate-spin" /> : isNarrationPlaying ? <Volume2 size={14} className="animate-pulse" /> : <VolumeX size={14} />}
         </button>
       )}
     </div>
