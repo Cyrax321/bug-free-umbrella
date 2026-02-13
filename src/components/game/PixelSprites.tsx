@@ -337,3 +337,99 @@ const RIBBON_GRID = [
 export function PixelRibbon({ size = 3, className = '' }: { size?: number; className?: string }) {
   return <PixelGrid grid={RIBBON_GRID} size={size} className={className} />;
 }
+
+// ---- CHOCOLATE ----
+const CHOCOLATE_GRID = [
+  ['#5c3317','#5c3317','#5c3317','#5c3317','#5c3317'],
+  ['#5c3317','#8B4513','#8B4513','#8B4513','#5c3317'],
+  ['#5c3317','#8B4513','#d4a76a','#8B4513','#5c3317'],
+  ['#5c3317','#8B4513','#8B4513','#8B4513','#5c3317'],
+  ['#5c3317','#5c3317','#5c3317','#5c3317','#5c3317'],
+];
+
+export function PixelChocolate({ size = 3, className = '' }: { size?: number; className?: string }) {
+  return <PixelGrid grid={CHOCOLATE_GRID} size={size} className={className} />;
+}
+
+// ---- CHOCOLATE HEART ----
+const CHOCO_HEART_GRID = [
+  ['_','#8B4513','#8B4513','_','_','#8B4513','#8B4513','_'],
+  ['#8B4513','#d4a76a','#8B4513','#8B4513','#8B4513','#8B4513','#d4a76a','#8B4513'],
+  ['#8B4513','#8B4513','#8B4513','#8B4513','#8B4513','#8B4513','#8B4513','#8B4513'],
+  ['#8B4513','#8B4513','#8B4513','#8B4513','#8B4513','#8B4513','#8B4513','#8B4513'],
+  ['_','#8B4513','#8B4513','#8B4513','#8B4513','#8B4513','#8B4513','_'],
+  ['_','_','#8B4513','#8B4513','#8B4513','#8B4513','_','_'],
+  ['_','_','_','#8B4513','#8B4513','_','_','_'],
+];
+
+export function PixelChocoHeart({ size = 3, className = '' }: { size?: number; className?: string }) {
+  return <PixelGrid grid={CHOCO_HEART_GRID} size={size} className={className} />;
+}
+
+// ---- DIAMOND ----
+const DIAMOND_GRID = [
+  ['_','_','#87ceeb','_','_'],
+  ['_','#87ceeb','#aed6f1','#87ceeb','_'],
+  ['#5dade2','#aed6f1','#fff','#aed6f1','#5dade2'],
+  ['_','#5dade2','#aed6f1','#5dade2','_'],
+  ['_','_','#5dade2','_','_'],
+];
+
+export function PixelDiamond({ size = 3, className = '' }: { size?: number; className?: string }) {
+  return <PixelGrid grid={DIAMOND_GRID} size={size} className={className} />;
+}
+
+// ---- CROWN ----
+const CROWN_GRID = [
+  ['_','#ffd966','_','#ffd966','_','#ffd966','_'],
+  ['_','#ffd966','_','#ffd966','_','#ffd966','_'],
+  ['#ffd966','#ffd966','#ffd966','#ffd966','#ffd966','#ffd966','#ffd966'],
+  ['#f39c12','#ffd966','#e85d75','#ffd966','#e85d75','#ffd966','#f39c12'],
+  ['#f39c12','#f39c12','#f39c12','#f39c12','#f39c12','#f39c12','#f39c12'],
+];
+
+export function PixelCrown({ size = 3, className = '' }: { size?: number; className?: string }) {
+  return <PixelGrid grid={CROWN_GRID} size={size} className={className} />;
+}
+
+// ---- PARTY POPPER ----
+const POPPER_GRID = [
+  ['_','#e85d75','_','_','#ffd966'],
+  ['_','_','#87ceeb','_','_'],
+  ['#ffd966','_','#f39c12','_','_'],
+  ['_','_','#f39c12','_','_'],
+  ['_','_','_','#f39c12','_'],
+  ['_','_','_','_','#8B6914'],
+];
+
+export function PixelPopper({ size = 3, className = '' }: { size?: number; className?: string }) {
+  return <PixelGrid grid={POPPER_GRID} size={size} className={className} />;
+}
+
+// ---- ROSE ----
+const ROSE_GRID = [
+  ['_','#e85d75','#e85d75','_'],
+  ['#e85d75','#f4a0b0','#e85d75','#e85d75'],
+  ['#e85d75','#e85d75','#f4a0b0','#e85d75'],
+  ['_','#e85d75','#e85d75','_'],
+  ['_','_','#5a8f3c','_'],
+  ['_','_','#5a8f3c','_'],
+  ['_','#5a8f3c','#5a8f3c','_'],
+];
+
+export function PixelRose({ size = 3, className = '' }: { size?: number; className?: string }) {
+  return <PixelGrid grid={ROSE_GRID} size={size} className={className} />;
+}
+
+// ---- LOVE RING ----
+const RING_GRID = [
+  ['_','#ffd966','#ffd966','#ffd966','_'],
+  ['#ffd966','_','_','_','#ffd966'],
+  ['#ffd966','_','#87ceeb','_','#ffd966'],
+  ['#ffd966','_','_','_','#ffd966'],
+  ['_','#ffd966','#ffd966','#ffd966','_'],
+];
+
+export function PixelRing({ size = 3, className = '' }: { size?: number; className?: string }) {
+  return <PixelGrid grid={RING_GRID} size={size} className={className} />;
+}
