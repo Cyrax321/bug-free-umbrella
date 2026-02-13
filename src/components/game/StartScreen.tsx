@@ -1,4 +1,4 @@
-import { Volume2, VolumeX, Mic, MicOff } from 'lucide-react';
+import { Volume2, VolumeX, Mic, MicOff, Music, Loader2 } from 'lucide-react';
 import { PixelBuba, PixelBubibu, PixelHeart, PixelPetal, PixelStar } from './PixelSprites';
 
 interface StartScreenProps {
@@ -7,9 +7,12 @@ interface StartScreenProps {
   onToggleSound: () => void;
   onToggleNarration: () => void;
   onStart: () => void;
+  musicPlaying: boolean;
+  musicLoading: boolean;
+  onToggleMusic: () => void;
 }
 
-export default function StartScreen({ soundEnabled, narrationEnabled, onToggleSound, onToggleNarration, onStart }: StartScreenProps) {
+export default function StartScreen({ soundEnabled, narrationEnabled, onToggleSound, onToggleNarration, onStart, musicPlaying, musicLoading, onToggleMusic }: StartScreenProps) {
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden"
       style={{ background: 'linear-gradient(180deg, hsl(330 30% 12%), hsl(340 25% 8%), hsl(270 20% 10%))' }}>
@@ -94,6 +97,13 @@ export default function StartScreen({ soundEnabled, narrationEnabled, onToggleSo
           >
             {narrationEnabled ? <Mic size={12} /> : <MicOff size={12} />}
             Voice {narrationEnabled ? 'ON' : 'OFF'}
+          </button>
+          <button
+            onClick={onToggleMusic}
+            className="flex items-center gap-1.5 text-muted-foreground text-[7px] font-pixel px-3 py-2 bg-muted/50 rounded-lg active:scale-95 transition-transform"
+          >
+            {musicLoading ? <Loader2 size={12} className="animate-spin" /> : <Music size={12} />}
+            Music {musicPlaying ? 'ON' : 'OFF'}
           </button>
         </div>
       </div>
