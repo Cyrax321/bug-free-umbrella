@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import NarrativeText from './NarrativeText';
+import { PixelHeart, PixelTemple, PixelSparkle, PixelBuba, PixelBubibu, PixelLock } from './PixelSprites';
 
 interface Props {
   unlocked: boolean;
@@ -11,7 +12,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "In the ancient Heart Sync Temple, cherry blossoms grow through the stone floors and the air shimmers with soft golden light. Legend says that when two hearts beat as one, the temple doors will open to reveal the path to eternal togetherness. Buba's heart beats with warmth, and Bubibu's beats with longing. 'Can you feel it?' the temple whispers. 'You've always been in rhythm... you just forgot to listen.' 💖✨";
+const NARRATIVE = "In the ancient Heart Sync Temple, cherry blossoms grow through the stone floors and the air shimmers with soft golden light. Legend says that when two hearts beat as one, the temple doors will open to reveal the path to eternal togetherness. Buba's heart beats with warmth, and Bubibu's beats with longing. 'Can you feel it?' the temple whispers. 'You've always been in rhythm... you just forgot to listen.'";
 
 export default function Area5Temple({ unlocked, complete, onSync, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [leftPhase, setLeftPhase] = useState(0);
@@ -45,7 +46,9 @@ export default function Area5Temple({ unlocked, complete, onSync, narrationEnabl
   if (!unlocked) {
     return (
       <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(260 15% 10%), hsl(270 20% 12%))' }}>
-        <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow">🔒 Open houses above to continue...</div>
+        <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
+          <PixelLock size={3} /> Open houses above to continue...
+        </div>
       </section>
     );
   }
@@ -53,32 +56,54 @@ export default function Area5Temple({ unlocked, complete, onSync, narrationEnabl
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16" style={{ background: 'linear-gradient(180deg, hsl(270 20% 12%), hsl(280 25% 10%))' }}>
       {Array.from({ length: 10 }).map((_, i) => (
-        <div key={i} className="absolute text-pixel-lavender/20 pointer-events-none animate-float-slow"
-          style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, fontSize: `${12 + Math.random() * 10}px`, animationDelay: `${Math.random() * 4}s` }}>♡</div>
+        <div key={i} className="absolute pointer-events-none animate-float-slow opacity-20"
+          style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 4}s` }}>
+          <PixelHeart size={2} />
+        </div>
       ))}
-      <div className="relative mb-6"><div className="text-4xl mb-2 text-center">🏛️</div><div className="font-pixel text-[8px] text-pixel-lavender text-center">Heart Sync Temple</div></div>
+      <div className="relative mb-6 flex flex-col items-center">
+        <PixelTemple size={6} />
+        <div className="font-pixel text-[8px] text-pixel-lavender text-center mt-2">Heart Sync Temple</div>
+      </div>
       <NarrativeText text={NARRATIVE} visible={true} className="mb-8" narrationEnabled={narrationEnabled} onPlayNarration={onPlayNarration} isNarrationPlaying={isNarrationPlaying} isNarrationLoading={isNarrationLoading} />
       <div className="flex items-center gap-12 mb-8">
-        <div className="text-center">
-          <div className="text-4xl transition-transform" style={{ transform: `scale(${complete || syncing ? 1 : leftScale})` }}>💖</div>
+        <div className="text-center flex flex-col items-center">
+          <div className="transition-transform" style={{ transform: `scale(${complete || syncing ? 1 : leftScale})` }}>
+            <PixelHeart size={5} />
+          </div>
           <span className="font-pixel text-[6px] text-pixel-pink mt-1 block">Buba</span>
+          <div className="mt-1"><PixelBuba size={3} /></div>
         </div>
-        <div className={`font-pixel text-[8px] transition-all duration-500 ${complete || syncing ? 'text-pixel-gold animate-pulse-glow' : 'text-muted-foreground/40'}`}>{complete || syncing ? '💫' : '...'}</div>
-        <div className="text-center">
-          <div className="text-4xl transition-transform" style={{ transform: `scale(${complete || syncing ? 1 : rightScale})` }}>💖</div>
+        <div className={`transition-all duration-500 ${complete || syncing ? 'animate-pulse-glow' : 'opacity-40'}`}>
+          {complete || syncing ? <PixelSparkle size={4} /> : <span className="font-pixel text-[8px] text-muted-foreground">...</span>}
+        </div>
+        <div className="text-center flex flex-col items-center">
+          <div className="transition-transform" style={{ transform: `scale(${complete || syncing ? 1 : rightScale})` }}>
+            <PixelHeart size={5} />
+          </div>
           <span className="font-pixel text-[6px] text-pixel-pink mt-1 block">Bubibu</span>
+          <div className="mt-1"><PixelBubibu size={3} /></div>
         </div>
       </div>
       {!complete && (
-        <button onClick={handleTap} disabled={syncing} className="font-pixel text-[9px] bg-pixel-lavender/30 text-foreground px-6 py-3 rounded-lg pixel-border-sm active:scale-95 transition-all hover:bg-pixel-lavender/40">
-          {syncing ? '💫 Syncing...' : `Tap to sync 💗 (${Math.min(taps, 7)}/7)`}
+        <button onClick={handleTap} disabled={syncing} className="font-pixel text-[9px] bg-pixel-lavender/30 text-foreground px-6 py-3 rounded-lg pixel-border-sm active:scale-95 transition-all hover:bg-pixel-lavender/40 flex items-center gap-2">
+          {syncing ? (
+            <><PixelSparkle size={2} /> Syncing...</>
+          ) : (
+            <><PixelHeart size={2} /> Tap to sync ({Math.min(taps, 7)}/7)</>
+          )}
         </button>
       )}
       {complete && (
-        <div className="text-center animate-slide-up">
-          <div className="font-pixel text-[8px] text-pixel-gold mb-4">✨ Hearts synchronized! The temple gates open...</div>
-          <div className="text-3xl animate-heartbeat">💖💖</div>
-          <div className="mt-6 text-2xl animate-bounce-gentle">↓</div>
+        <div className="text-center animate-slide-up flex flex-col items-center">
+          <div className="font-pixel text-[8px] text-pixel-gold mb-4 flex items-center gap-1">
+            <PixelSparkle size={2} /> Hearts synchronized! The temple gates open... <PixelSparkle size={2} />
+          </div>
+          <div className="flex gap-2 animate-heartbeat">
+            <PixelHeart size={4} />
+            <PixelHeart size={4} />
+          </div>
+          <div className="mt-6 animate-bounce-gentle"><PixelHeart size={3} /></div>
         </div>
       )}
     </section>

@@ -1,4 +1,5 @@
 import { Volume2, VolumeX, Mic, MicOff } from 'lucide-react';
+import { PixelBuba, PixelBubibu, PixelHeart, PixelPetal, PixelStar } from './PixelSprites';
 
 interface StartScreenProps {
   soundEnabled: boolean;
@@ -13,66 +14,70 @@ export default function StartScreen({ soundEnabled, narrationEnabled, onToggleSo
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden"
       style={{ background: 'linear-gradient(180deg, hsl(330 30% 12%), hsl(340 25% 8%), hsl(270 20% 10%))' }}>
       
-      {/* Cherry blossom petals falling */}
-      {Array.from({ length: 25 }).map((_, i) => (
+      {/* Pixel cherry blossom petals falling */}
+      {Array.from({ length: 20 }).map((_, i) => (
         <div
           key={`petal-${i}`}
           className="absolute pointer-events-none animate-petal select-none"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${-5 + Math.random() * 20}%`,
-            fontSize: `${8 + Math.random() * 14}px`,
             animationDelay: `${Math.random() * 6}s`,
             animationDuration: `${4 + Math.random() * 4}s`,
             opacity: 0.4 + Math.random() * 0.3,
+            transform: `scale(${0.6 + Math.random() * 0.6})`,
           }}
         >
-          🌸
+          <PixelPetal size={3} />
         </div>
       ))}
 
-      {/* Floating hearts */}
-      {Array.from({ length: 10 }).map((_, i) => (
+      {/* Floating pixel hearts */}
+      {Array.from({ length: 8 }).map((_, i) => (
         <div
           key={i}
-          className="absolute text-pixel-pink/20 animate-float-slow select-none pointer-events-none"
+          className="absolute opacity-20 animate-float-slow select-none pointer-events-none"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
-            fontSize: `${10 + Math.random() * 16}px`,
             animationDelay: `${Math.random() * 4}s`,
             animationDuration: `${3 + Math.random() * 3}s`,
+            transform: `scale(${0.5 + Math.random() * 0.8})`,
           }}
         >
-          💖
+          <PixelHeart size={2} />
         </div>
       ))}
 
       <div className="relative z-10 text-center px-6">
         {/* Pixel characters */}
         <div className="flex items-center justify-center gap-6 mb-4">
-          <div className="text-3xl animate-bounce-gentle">🧑‍💻</div>
-          <div className="text-2xl animate-heartbeat">💖</div>
-          <div className="text-3xl animate-bounce-gentle" style={{ animationDelay: '0.5s' }}>👩</div>
+          <div className="animate-bounce-gentle"><PixelBubibu size={5} /></div>
+          <div className="animate-heartbeat"><PixelHeart size={4} /></div>
+          <div className="animate-bounce-gentle" style={{ animationDelay: '0.5s' }}><PixelBuba size={5} /></div>
         </div>
         
         <h1 className="font-pixel text-pixel-pink text-base sm:text-xl glow-text mb-1 leading-loose">
           Buba &<br />Bubibu's
         </h1>
-        <p className="font-pixel text-pixel-peach text-[8px] sm:text-[10px] mb-2 tracking-wider">
-          🌸 Pixel Valentine Adventure 🌸
+        <p className="font-pixel text-pixel-peach text-[8px] sm:text-[10px] mb-2 tracking-wider flex items-center justify-center gap-2">
+          <PixelPetal size={2} /> Pixel Valentine Adventure <PixelPetal size={2} />
         </p>
         <p className="font-body text-muted-foreground text-xs mb-8 max-w-[200px] mx-auto italic">
           A cherry blossom love story told in pixels...
         </p>
 
-        <div className="text-3xl mb-6 animate-heartbeat">🌸💖🌸</div>
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <PixelPetal size={3} />
+          <div className="animate-heartbeat"><PixelHeart size={4} /></div>
+          <PixelPetal size={3} />
+        </div>
 
         <button
           onClick={onStart}
           className="font-pixel text-[10px] sm:text-xs bg-primary text-primary-foreground px-8 py-4 rounded-lg pixel-border glow-pink active:scale-95 transition-transform mb-6 hover:brightness-110"
         >
-          Begin Journey 🌸
+          Begin Journey
         </button>
 
         <div className="flex items-center justify-center gap-3">
