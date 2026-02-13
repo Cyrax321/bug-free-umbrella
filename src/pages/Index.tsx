@@ -1,13 +1,112 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useRef, useEffect } from 'react';
+import { useGameState } from '@/hooks/useGameState';
+import StartScreen from '@/components/game/StartScreen';
+import Area1Bedroom from '@/components/game/Area1Bedroom';
+import Area2Garden from '@/components/game/Area2Garden';
+import Area3Bridge from '@/components/game/Area3Bridge';
+import Area4MemoryTown from '@/components/game/Area4MemoryTown';
+import Area5Temple from '@/components/game/Area5Temple';
+import Area6ValentineHill from '@/components/game/Area6ValentineHill';
 
 const Index = () => {
+  const {
+    state,
+    startGame,
+    toggleSound,
+    collectHeart,
+    collectPetal,
+    addBridgePiece,
+    openHouse,
+    syncHearts,
+    lightLantern,
+    makeWish,
+    HEARTS_NEEDED,
+    PETALS_NEEDED,
+    BRIDGE_PIECES_NEEDED,
+    HOUSES_NEEDED,
+    LANTERNS_NEEDED,
+  } = useGameState();
+
+  const area2Ref = useRef<HTMLDivElement>(null);
+  const area3Ref = useRef<HTMLDivElement>(null);
+  const area4Ref = useRef<HTMLDivElement>(null);
+  const area5Ref = useRef<HTMLDivElement>(null);
+  const area6Ref = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll when areas complete
+  useEffect(() => {
+    if (state.area1Complete) area2Ref.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [state.area1Complete]);
+  useEffect(() => {
+    if (state.area2Complete) area3Ref.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [state.area2Complete]);
+  useEffect(() => {
+    if (state.area3Complete) area4Ref.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [state.area3Complete]);
+  useEffect(() => {
+    if (state.area4Complete) area5Ref.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [state.area4Complete]);
+  useEffect(() => {
+    if (state.area5Complete) area6Ref.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [state.area5Complete]);
+
+  if (!state.started) {
+    return <StartScreen soundEnabled={state.soundEnabled} onToggleSound={toggleSound} onStart={startGame} />;
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <main className="w-full overflow-x-hidden">
+      <Area1Bedroom
+        heartsCollected={state.heartsCollected}
+        heartsNeeded={HEARTS_NEEDED}
+        complete={state.area1Complete}
+        onCollectHeart={collectHeart}
+      />
+      <div ref={area2Ref}>
+        <Area2Garden
+          unlocked={state.area1Complete}
+          petalsCollected={state.petalsCollected}
+          petalsNeeded={PETALS_NEEDED}
+          complete={state.area2Complete}
+          onCollectPetal={collectPetal}
+        />
       </div>
-    </div>
+      <div ref={area3Ref}>
+        <Area3Bridge
+          unlocked={state.area2Complete}
+          bridgePieces={state.bridgePieces}
+          bridgePiecesNeeded={BRIDGE_PIECES_NEEDED}
+          complete={state.area3Complete}
+          onAddPiece={addBridgePiece}
+        />
+      </div>
+      <div ref={area4Ref}>
+        <Area4MemoryTown
+          unlocked={state.area3Complete}
+          housesOpened={state.housesOpened}
+          housesNeeded={HOUSES_NEEDED}
+          complete={state.area4Complete}
+          onOpenHouse={openHouse}
+        />
+      </div>
+      <div ref={area5Ref}>
+        <Area5Temple
+          unlocked={state.area4Complete}
+          complete={state.area5Complete}
+          onSync={syncHearts}
+        />
+      </div>
+      <div ref={area6Ref}>
+        <Area6ValentineHill
+          unlocked={state.area5Complete}
+          lanternsLit={state.lanternsLit}
+          lanternsNeeded={LANTERNS_NEEDED}
+          wishMade={state.wishMade}
+          onLightLantern={lightLantern}
+          onMakeWish={makeWish}
+        />
+      </div>
+    </main>
   );
 };
 
