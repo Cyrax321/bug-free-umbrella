@@ -245,13 +245,13 @@ export function PixelArrowDown({ size = 4, className = '' }: { size?: number; cl
 // ---- BUBA (kawaii chibi girl) ----
 export function PixelBuba({ size = 3, className = '' }: { size?: number; className?: string }) {
   const w = size * 24;
-  return <img src={bubaImg} alt="Buba" className={`inline-block ${className}`} style={{ width: w, height: 'auto' }} />;
+  return <img src={bubaImg} alt="Buba" className={`inline-block ${className}`} style={{ width: w, height: 'auto', mixBlendMode: 'screen' }} />;
 }
 
 // ---- BUBIBU (kawaii chibi boy) ----
 export function PixelBubibu({ size = 3, className = '' }: { size?: number; className?: string }) {
   const w = size * 24;
-  return <img src={bubibuImg} alt="Bubibu" className={`inline-block ${className}`} style={{ width: w, height: 'auto' }} />;
+  return <img src={bubibuImg} alt="Bubibu" className={`inline-block ${className}`} style={{ width: w, height: 'auto', mixBlendMode: 'screen' }} />;
 }
 
 // ---- RAINDROP ----
