@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "Above the hill, birthday stars start darting across the sky like glowing candles with tails. Bubibo reaches for them one by one, collecting wishes he wants to tuck into Anya's celebration. Each star feels like a tiny promise that her 18th year will be bright, gentle, and full of joy.";
+const NARRATIVE = "Above the hill, birthday stars start darting across the sky like glowing candles with tails. Bubibo reaches for them one by one, collecting wishes he wants to tuck into Buba's celebration. Each star feels like a tiny promise that her 18th year will be bright, gentle, and full of joy.";
 
 interface FallingStar {
   id: number;

@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "In a bright meadow beyond the bridge, Bubibo picks flowers for Anya's birthday bouquet. He chooses the softest colors, the fluffiest petals, and the happiest blooms he can find, building something that feels as warm as her smile. Every flower looks like it was waiting all year just to be part of her day.";
+const NARRATIVE = "In a bright meadow beyond the bridge, Bubibo picks flowers for Buba's birthday bouquet. He chooses the softest colors, the fluffiest petals, and the happiest blooms he can find, building something that feels as warm as her smile. Every flower looks like it was waiting all year just to be part of her day.";
 
 const FLOWER_TYPES = [
   { name: 'Pink Rose', colors: ['#e85d75', '#f4a0b0', '#fde4ec'] },
@@ -88,7 +88,7 @@ export default function Area3cBouquetBuilder({ unlocked, complete, flowersCollec
 
       {/* Bouquet preview */}
       <div className="mt-6 flex flex-col items-center">
-        <div className="font-pixel text-[7px] text-pixel-pink mb-2">Anya's Birthday Bouquet</div>
+        <div className="font-pixel text-[7px] text-pixel-pink mb-2">Buba's Birthday Bouquet</div>
         <div className="flex flex-wrap gap-1 justify-center bg-muted/20 rounded-lg px-4 py-3 pixel-border-sm min-h-[50px] min-w-[120px]">
           {Array.from(picked).map(id => {
             const type = positions.find(p => p.id === id)?.type ?? 0;

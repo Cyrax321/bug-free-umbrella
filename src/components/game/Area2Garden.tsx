@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "At sunrise, Bubibo steps into a dreamy birthday garden where petals drift like tiny confetti pieces. He gathers the prettiest ones to decorate Anya's path, imagining her walking through a shower of soft pink wishes. The flowers sway in approval, like they already know this day is meant to be all about her.";
+const NARRATIVE = "At sunrise, Bubibo steps into a dreamy birthday garden where petals drift like tiny confetti pieces. He gathers the prettiest ones to decorate Buba's path, imagining her walking through a shower of soft pink wishes. The flowers sway in approval, like they already know this day is meant to be all about her.";
 
 export default function Area2Garden({ unlocked, petalsCollected, petalsNeeded, complete, onCollectPetal, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [tapped, setTapped] = useState<Set<number>>(new Set());

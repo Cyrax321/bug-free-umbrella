@@ -12,7 +12,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "At the Birthday Beat Pavilion, two glowing hearts pulse beneath a shower of sparkles. One shines for Anya, the other for Bubibo, and when their rhythm lines up, the final part of the celebration can begin. It feels less like magic and more like the universe clapping along for her big day.";
+const NARRATIVE = "At the Birthday Beat Pavilion, two glowing hearts pulse beneath a shower of sparkles. One shines for Buba, the other for Bubibo, and when their rhythm lines up, the final part of the celebration can begin. It feels less like magic and more like the universe clapping along for her big day.";
 
 export default function Area5Temple({ unlocked, complete, onSync, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [leftPhase, setLeftPhase] = useState(0);
@@ -71,7 +71,7 @@ export default function Area5Temple({ unlocked, complete, onSync, narrationEnabl
           <div className="transition-transform" style={{ transform: `scale(${complete || syncing ? 1 : leftScale})` }}>
             <PixelHeart size={5} />
           </div>
-          <span className="font-pixel text-[6px] text-pixel-pink mt-1 block">Anya</span>
+          <span className="font-pixel text-[6px] text-pixel-pink mt-1 block">Buba</span>
           <div className="mt-1"><PixelBuba size={3} /></div>
         </div>
         <div className={`transition-all duration-500 ${complete || syncing ? 'animate-pulse-glow' : 'opacity-40'}`}>

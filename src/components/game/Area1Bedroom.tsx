@@ -13,7 +13,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "The night before Anya's 18th birthday feels extra sparkly somehow. Bubibo sits by his window with a sleepy smile, planning the cutest little surprise he can. The moonlight drips across the room like silver ribbon while he whispers, 'Tomorrow has to feel like a hug she can step into.' Tiny glowing hearts begin floating around him, as if the night itself wants to help.";
+const NARRATIVE = "The night before Buba's 18th birthday feels extra sparkly somehow. Bubibo sits by his window with a sleepy smile, planning the cutest little surprise he can. The moonlight drips across the room like silver ribbon while he whispers, 'Tomorrow has to feel like a hug she can step into.' Tiny glowing hearts begin floating around him, as if the night itself wants to help.";
 
 export default function Area1Bedroom({ heartsCollected, heartsNeeded, complete, onCollectHeart, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [tapped, setTapped] = useState<Set<number>>(new Set());

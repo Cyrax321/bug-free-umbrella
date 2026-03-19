@@ -12,7 +12,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "The sky becomes a giant birthday card, and the stars wait for Bubibo to connect them into one glowing shape. Line by line, the constellation turns into a giant heart for Anya, as if the whole night sky decided her 18th deserves its own decoration. It is sweet, a little dramatic, and exactly right.";
+const NARRATIVE = "The sky becomes a giant birthday card, and the stars wait for Bubibo to connect them into one glowing shape. Line by line, the constellation turns into a giant heart for Buba, as if the whole night sky decided her 18th deserves its own decoration. It is sweet, a little dramatic, and exactly right.";
 
 // Star positions forming a heart constellation
 const CONSTELLATION_STARS = [

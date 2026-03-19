@@ -15,7 +15,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "At the very top of the hill, the whole birthday surprise finally comes together. Bubibo has set out flowers, glowing lanterns, sweet treats, and the cutest little cake for Anya's 18th birthday. The sunset turns everything peach and pink while the air feels full of happy nerves, like the world is waiting with him to see her smile.";
+const NARRATIVE = "At the very top of the hill, the whole birthday surprise finally comes together. Bubibo has set out flowers, glowing lanterns, sweet treats, and the cutest little cake for Buba's 18th birthday. The sunset turns everything peach and pink while the air feels full of happy nerves, like the world is waiting with him to see her smile.";
 
 const PHOTOS = [
   '/photos/photo1.jpg', '/photos/photo2.jpg', '/photos/photo3.jpg', '/photos/photo4.jpg',
@@ -26,7 +26,7 @@ const PHOTOS = [
 const BIRTHDAY_SONG_LINES = [
   'Happy birthday to you',
   'Happy birthday to you',
-  'Happy birthday dear Anya',
+  'Happy birthday dear Buba',
   'Happy birthday to you',
 ];
 
@@ -42,9 +42,9 @@ const PARTY_GIFTS = [
 ];
 
 const LOVE_MESSAGE = [
-  "Happy 18th Birthday, Anya...",
+  "Happy 18th Birthday, Buba...",
   "",
-  "My dearest Anya,",
+  "My dearest Buba,",
   "",
   "Today is all about you, and I wanted this little pixel world to feel like the softest, happiest birthday hug I could make for you.",
   "",
@@ -57,10 +57,10 @@ const LOVE_MESSAGE = [
   "I hope your 18th birthday feels magical from beginning to end, and I hope you always remember how deeply loved, appreciated, and precious you are.",
   "",
   "Keep being soft, funny, beautiful, kind, and wonderfully you.",
-  "The world is so much cuter with Anya in it.",
+  "The world is so much cuter with Buba in it.",
   "",
   "Happy Birthday, my pretty girl.",
-  "Happy 18th birthday, Anya. I wish you the sweetest year ever.",
+  "Happy 18th birthday, Buba. I wish you the sweetest year ever.",
   "",
   "With all my love,",
   "Your Bubibo",
@@ -227,7 +227,7 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
           {/* Knife + Cut button */}
           {!cakeCut && (
             <button onClick={handleCutCake} className="font-pixel text-xs bg-primary text-primary-foreground px-8 py-4 rounded-lg pixel-border glow-pink active:scale-95 transition-transform animate-pulse-glow flex items-center gap-2 mt-4">
-              <PixelKnife size={3} /> Cut Anya's Cake <PixelHeart size={2} />
+              <PixelKnife size={3} /> Cut Buba's Cake <PixelHeart size={2} />
             </button>
           )}
           {cakeCut && !showMessage && (
@@ -286,7 +286,7 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
                 <p key={i} className={`font-pixel leading-relaxed mb-1 text-center ${
                   i === 0 ? 'text-[10px] text-pixel-gold glow-text' :
                   i === 2 ? 'text-[9px] text-pixel-pink' :
-                  line.includes('Happy 18th birthday, Anya') ? 'text-[10px] text-pixel-pink glow-text animate-pulse-glow' :
+                  line.includes('Happy 18th birthday, Buba') ? 'text-[10px] text-pixel-pink glow-text animate-pulse-glow' :
                   line.includes('Your Bubibo') ? 'text-[9px] text-pixel-peach' :
                   line === '' ? 'h-2' :
                   'text-[7px] text-foreground/80'
@@ -328,7 +328,7 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
                   <div className="bg-card/70 rounded-2xl pixel-border-sm p-4 mb-4">
                     <div className="flex items-center justify-center gap-2 mb-4">
                       <PixelRibbon size={2} />
-                      <p className="font-pixel text-[8px] text-pixel-peach">A mountain of gifts for Anya</p>
+                      <p className="font-pixel text-[8px] text-pixel-peach">A mountain of gifts for Buba</p>
                       <PixelRibbon size={2} />
                     </div>
                     <div className="grid grid-cols-4 gap-3 justify-items-center">
@@ -354,7 +354,7 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
 
                   {/* Footer */}
                   <div className="text-center mt-6">
-                    <p className="font-pixel text-[8px] text-pixel-peach mb-2">Next level: Anya's happiest year yet.</p>
+                    <p className="font-pixel text-[8px] text-pixel-peach mb-2">Next level: Buba's happiest year yet.</p>
                     <div className="flex justify-center gap-1 items-center">
                       <PixelStar size={2} className="animate-sparkle" />
                       <span className="font-pixel text-[6px] text-muted-foreground/60">Made with love by Bubibo</span>

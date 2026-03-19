@@ -1,7 +1,7 @@
 /**
  * Pure CSS pixel art sprites — no emojis!
  * Each sprite is a tiny grid of colored divs for that authentic retro look.
- * Anya and Bubibo use actual character images.
+ * Buba and Bubibo use actual character images.
  */
 
 import bubaImg from '@/assets/her c.png';
@@ -253,7 +253,7 @@ export function PixelBuba({ size = 3, className = '' }: { size?: number; classNa
     >
       <img
         src={bubaImg}
-        alt="Anya"
+        alt="Buba"
         style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', imageRendering: 'pixelated' }}
       />
     </span>

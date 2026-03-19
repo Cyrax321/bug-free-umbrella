@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "Bubibo sneaks into a tiny wrapping room where pastel boxes, ribbons, and glittery paper are stacked in cheerful little towers. He picks out presents for Anya one by one, making sure every bow is neat and every detail feels soft and special. 'If her smile gets even bigger with each gift,' he says, grinning to himself, 'then I am doing this right.'";
+const NARRATIVE = "Bubibo sneaks into a tiny wrapping room where pastel boxes, ribbons, and glittery paper are stacked in cheerful little towers. He picks out presents for Buba one by one, making sure every bow is neat and every detail feels soft and special. 'If her smile gets even bigger with each gift,' he says, grinning to himself, 'then I am doing this right.'";
 
 const GIFT_NAMES = [
   { name: 'Teddy Bear', icon: '🧸', color: 'bg-pixel-peach/30' },

@@ -12,10 +12,10 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "The sweetest parts of Bubibo's birthday letter for Anya have floated into the air and landed out of order. He chases the words around, laughing at the mess, then asks for help putting them back together. 'Her 18th message has to sound perfect,' he says. 'No scrambled feelings allowed.'";
+const NARRATIVE = "The sweetest parts of Bubibo's birthday letter for Buba have floated into the air and landed out of order. He chases the words around, laughing at the mess, then asks for help putting them back together. 'Her 18th message has to sound perfect,' he says. 'No scrambled feelings allowed.'";
 
 const SENTENCES = [
-  { scrambled: ['birthday', 'eighteenth', 'happy', 'Anya'], correct: 'happy eighteenth birthday Anya' },
+  { scrambled: ['birthday', 'eighteenth', 'happy', 'Buba'], correct: 'happy eighteenth birthday Buba' },
   { scrambled: ['light', 'you', 'every', 'room', 'up'], correct: 'you light up every room' },
   { scrambled: ['day', 'your', 'today', 'is', 'magic'], correct: 'today is your magic day' },
 ];

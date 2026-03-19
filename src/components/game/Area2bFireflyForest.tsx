@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "Beyond the garden, a firefly forest wakes up in little golden blinks. Bubibo laughs softly as he catches the lights one by one, because each glowing speck will become part of Anya's birthday lantern trail. The trees hum around him, turning the whole forest into a secret helper for the surprise.";
+const NARRATIVE = "Beyond the garden, a firefly forest wakes up in little golden blinks. Bubibo laughs softly as he catches the lights one by one, because each glowing speck will become part of Buba's birthday lantern trail. The trees hum around him, turning the whole forest into a secret helper for the surprise.";
 
 // Firefly pixel sprite
 function PixelFirefly({ size = 3 }: { size?: number }) {

@@ -12,7 +12,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "In a soft little clearing, a birthday memory game waits on a blanket of petals. Every matching pair unlocks another detail of the surprise Bubibo has been preparing for Anya. The cards shimmer like they are just as excited as he is.";
+const NARRATIVE = "In a soft little clearing, a birthday memory game waits on a blanket of petals. Every matching pair unlocks another detail of the surprise Bubibo has been preparing for Buba. The cards shimmer like they are just as excited as he is.";
 
 type CardSymbol = 'heart' | 'petal' | 'star' | 'sparkle' | 'flower' | 'moon';
 const SYMBOLS: CardSymbol[] = ['heart', 'petal', 'star', 'sparkle', 'flower', 'moon'];

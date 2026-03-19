@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "A little bridge leads toward the final birthday hill, but the breeze has scattered its glowing planks across the path. Bubibo gathers every piece carefully, determined to rebuild the way before Anya arrives. 'No birthday surprise is complete without a proper entrance,' he says, fitting each piece back into place with a proud smile.";
+const NARRATIVE = "A little bridge leads toward the final birthday hill, but the breeze has scattered its glowing planks across the path. Bubibo gathers every piece carefully, determined to rebuild the way before Buba arrives. 'No birthday surprise is complete without a proper entrance,' he says, fitting each piece back into place with a proud smile.";
 
 export default function Area3Bridge({ unlocked, bridgePieces, bridgePiecesNeeded, complete, onAddPiece, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [placed, setPlaced] = useState<Set<number>>(new Set());

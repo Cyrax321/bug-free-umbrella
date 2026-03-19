@@ -61,13 +61,13 @@ export default function StartScreen({ soundEnabled, narrationEnabled, onToggleSo
         </div>
         
         <h1 className="font-pixel text-pixel-pink text-base sm:text-xl glow-text mb-1 leading-loose">
-          Anya &<br />Bubibo's
+          Buba &<br />Bubibo's
         </h1>
         <p className="font-pixel text-pixel-peach text-[8px] sm:text-[10px] mb-2 tracking-wider flex items-center justify-center gap-2">
           <PixelPetal size={2} /> Pixel Birthday Adventure <PixelPetal size={2} />
         </p>
         <p className="font-body text-muted-foreground text-xs mb-8 max-w-[200px] mx-auto italic">
-          A tiny birthday surprise for Anya's 18th, told in pixels...
+          A tiny birthday surprise for Buba's 18th, told in pixels...
         </p>
 
         <div className="flex items-center justify-center gap-3 mb-6">

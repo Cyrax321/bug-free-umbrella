@@ -21,9 +21,9 @@ const PHOTOS = [
 ];
 
 const CAPTIONS = [
-  "Memory unlocked", "Anya's smile makes every day softer", "Tiny moments with you feel huge",
+  "Memory unlocked", "Buba's smile makes every day softer", "Tiny moments with you feel huge",
   "Every photo of you belongs in a treasure box", "You make ordinary days feel sparkly",
-  "Eighteen looks lovely on you already", "Sunshine follows you everywhere, Anya", "You turn memories into favorite places",
+  "Eighteen looks lovely on you already", "Sunshine follows you everywhere, Buba", "You turn memories into favorite places",
   "Your laugh could power this whole town", "This day was always meant to celebrate you", "So many sweet moments, one sweet girl", "The world looks cuter with you in it",
 ];
 
@@ -33,7 +33,7 @@ const HOUSE_COLORS = [
   'bg-pixel-gold/15', 'bg-pixel-sky/15', 'bg-pixel-pink/25', 'bg-pixel-lavender/25',
 ];
 
-const NARRATIVE = "Memory Town is where Bubibo keeps all the little moments that remind him of Anya. Each tiny house glows with a photo, a laugh, or a soft feeling he never wanted to forget. He lights them one by one until the whole street shines like a scrapbook made just for her 18th birthday.";
+const NARRATIVE = "Memory Town is where Bubibo keeps all the little moments that remind him of Buba. Each tiny house glows with a photo, a laugh, or a soft feeling he never wanted to forget. He lights them one by one until the whole street shines like a scrapbook made just for her 18th birthday.";
 
 export default function Area4MemoryTown({ unlocked, housesOpened, housesNeeded, complete, onOpenHouse, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [selectedHouse, setSelectedHouse] = useState<number | null>(null);

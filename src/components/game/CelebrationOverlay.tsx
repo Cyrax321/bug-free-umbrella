@@ -5,7 +5,7 @@ import { PixelHeart, PixelChocoHeart, PixelChocolate, PixelDiamond, PixelCrown, 
 const REWARD_MESSAGES = [
   "You're amazing!",
   "Birthday magic!",
-  "Anya would smile!",
+  "Buba would smile!",
   "Cute surprise!",
   "Party level UP!",
   "Sparkle power!",
