@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "The garden blooms in soft pinks and lavenders, like a painting from a dream Bubibu once had about Buba. Cherry blossom petals drift lazily through the warm breeze, each one carrying a tiny wish. 'If I catch enough petals,' Bubibu thinks, 'maybe they'll weave a path straight to her heart.' The flowers seem to lean closer, whispering, 'She planted these for you, you know... every single one.'";
+const NARRATIVE = "At sunrise, Bubibo steps into a dreamy birthday garden where petals drift like tiny confetti pieces. He gathers the prettiest ones to decorate Anya's path, imagining her walking through a shower of soft pink wishes. The flowers sway in approval, like they already know this day is meant to be all about her.";
 
 export default function Area2Garden({ unlocked, petalsCollected, petalsNeeded, complete, onCollectPetal, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [tapped, setTapped] = useState<Set<number>>(new Set());
@@ -33,7 +33,7 @@ export default function Area2Garden({ unlocked, petalsCollected, petalsNeeded, c
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] bg-pixel-garden/20 flex items-center justify-center">
+      <section className="relative min-h-[50vh] bg-pixel-garden/20 flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(146 54% 86%), hsl(196 88% 88%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Light the path above to continue...
         </div>
@@ -43,7 +43,7 @@ export default function Area2Garden({ unlocked, petalsCollected, petalsNeeded, c
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16"
-      style={{ background: 'linear-gradient(180deg, hsl(270 30% 15%), hsl(330 20% 12%))' }}>
+      style={{ background: 'linear-gradient(180deg, hsl(150 57% 84%), hsl(196 94% 85%), hsl(44 100% 88%))' }}>
       {/* Background falling petals */}
       {Array.from({ length: 20 }).map((_, i) => (
         <div key={`bg-${i}`} className="absolute pointer-events-none animate-petal opacity-40"
@@ -73,7 +73,7 @@ export default function Area2Garden({ unlocked, petalsCollected, petalsNeeded, c
       </div>
       <div className="font-pixel text-[8px] text-pixel-lavender mt-3 flex items-center gap-1">
         {complete ? (
-          <><PixelFlower size={2} /> Heart vines bloom! Continue...</>
+          <><PixelFlower size={2} /> Birthday blooms are ready! Continue...</>
         ) : (
           <><PixelPetal size={2} /> {petalsCollected}/{petalsNeeded} petals</>
         )}

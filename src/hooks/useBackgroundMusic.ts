@@ -32,7 +32,7 @@ export function useBackgroundMusic() {
             Authorization: `Bearer ${SUPABASE_KEY}`,
           },
           body: JSON.stringify({
-            prompt: "Gentle music box melody, soft piano, calm dreamy lullaby, romantic valentine love story, warm cozy lo-fi ambient, cherry blossom peaceful atmosphere, sweet and tender",
+            prompt: "Gentle birthday music box melody, soft piano, dreamy cute celebration, warm cozy lo-fi ambient, sweet pastel atmosphere, magical eighteenth birthday feeling, tender and joyful",
             duration: 30,
           }),
         }

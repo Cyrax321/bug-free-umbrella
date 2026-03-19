@@ -12,7 +12,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "In a secret clearing, magical cards lie face-down on a bed of cherry blossom petals. Each pair holds a symbol of Buba and Bubibu's love. 'Match them all,' the petals whisper, 'and the magic will grow stronger.' Bubibu's eyes sparkle with determination.";
+const NARRATIVE = "In a soft little clearing, a birthday memory game waits on a blanket of petals. Every matching pair unlocks another detail of the surprise Bubibo has been preparing for Anya. The cards shimmer like they are just as excited as he is.";
 
 type CardSymbol = 'heart' | 'petal' | 'star' | 'sparkle' | 'flower' | 'moon';
 const SYMBOLS: CardSymbol[] = ['heart', 'petal', 'star', 'sparkle', 'flower', 'moon'];
@@ -81,7 +81,7 @@ export default function Area4bMemoryCards({ unlocked, complete, onComplete, narr
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(330 15% 10%), hsl(280 20% 10%))' }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(340 88% 88%), hsl(263 82% 86%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Open houses above to continue...
         </div>
@@ -91,7 +91,7 @@ export default function Area4bMemoryCards({ unlocked, complete, onComplete, narr
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16"
-      style={{ background: 'linear-gradient(180deg, hsl(280 20% 10%), hsl(320 25% 12%))' }}>
+      style={{ background: 'linear-gradient(180deg, hsl(267 81% 85%), hsl(338 92% 87%), hsl(47 100% 88%))' }}>
       
       <NarrativeText text={NARRATIVE} visible={true} narrationEnabled={narrationEnabled} onPlayNarration={onPlayNarration} isNarrationPlaying={isNarrationPlaying} isNarrationLoading={isNarrationLoading} />
 
@@ -121,7 +121,7 @@ export default function Area4bMemoryCards({ unlocked, complete, onComplete, narr
 
       <div className="font-pixel text-[8px] text-pixel-lavender mt-6 flex items-center gap-1">
         {complete ? (
-          <><PixelSparkle size={2} /> All pairs matched! Continue... <PixelSparkle size={2} /></>
+          <><PixelSparkle size={2} /> All birthday pairs matched! Continue... <PixelSparkle size={2} /></>
         ) : (
           <><PixelHeart size={2} /> {matched.size / 2}/{SYMBOLS.length} pairs matched</>
         )}

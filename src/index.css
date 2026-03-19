@@ -6,47 +6,47 @@
 
 @layer base {
   :root {
-    --background: 330 30% 8%;
-    --foreground: 330 100% 95%;
+    --background: 36 100% 97%;
+    --foreground: 224 34% 20%;
 
-    --card: 330 25% 12%;
-    --card-foreground: 330 100% 95%;
+    --card: 38 100% 99%;
+    --card-foreground: 224 34% 20%;
 
-    --popover: 330 25% 12%;
-    --popover-foreground: 330 100% 95%;
+    --popover: 38 100% 99%;
+    --popover-foreground: 224 34% 20%;
 
-    --primary: 340 80% 65%;
-    --primary-foreground: 330 30% 8%;
+    --primary: 18 91% 62%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 40% 50%;
-    --secondary-foreground: 330 100% 95%;
+    --secondary: 203 73% 78%;
+    --secondary-foreground: 224 34% 20%;
 
-    --muted: 330 20% 18%;
-    --muted-foreground: 330 30% 60%;
+    --muted: 36 62% 92%;
+    --muted-foreground: 223 18% 43%;
 
-    --accent: 20 70% 70%;
-    --accent-foreground: 330 30% 8%;
+    --accent: 48 100% 79%;
+    --accent-foreground: 224 34% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 330 20% 20%;
-    --input: 330 20% 20%;
-    --ring: 340 80% 65%;
+    --border: 31 43% 82%;
+    --input: 31 43% 82%;
+    --ring: 24 95% 63%;
 
     --radius: 0.5rem;
 
     /* Custom pixel palette */
-    --pixel-pink: 340 80% 65%;
-    --pixel-lavender: 270 40% 60%;
-    --pixel-peach: 20 70% 70%;
-    --pixel-dark: 330 30% 8%;
-    --pixel-night: 240 30% 12%;
-    --pixel-garden: 150 40% 35%;
-    --pixel-gold: 45 80% 60%;
-    --pixel-sky: 220 50% 55%;
-    --pixel-sunset: 15 80% 55%;
-    --pixel-glow: 340 100% 80%;
+    --pixel-pink: 346 73% 72%;
+    --pixel-lavender: 258 54% 78%;
+    --pixel-peach: 22 83% 74%;
+    --pixel-dark: 224 34% 20%;
+    --pixel-night: 220 42% 35%;
+    --pixel-garden: 148 34% 53%;
+    --pixel-gold: 44 92% 67%;
+    --pixel-sky: 202 63% 75%;
+    --pixel-sunset: 18 80% 66%;
+    --pixel-glow: 45 100% 92%;
   }
 }
 
@@ -59,6 +59,7 @@
     @apply bg-background text-foreground;
     font-family: 'Quicksand', sans-serif;
     overflow-x: hidden;
+    background: linear-gradient(180deg, hsl(var(--background)), hsl(34 70% 95%));
   }
 
   .font-pixel {
@@ -70,24 +71,24 @@
   .pixel-border {
     box-shadow:
       inset -4px -4px 0px 0px hsl(var(--pixel-dark)),
-      inset 4px 4px 0px 0px hsl(var(--pixel-glow) / 0.3);
+      inset 4px 4px 0px 0px hsl(var(--pixel-glow) / 0.65),
+      0 6px 16px hsl(var(--pixel-dark) / 0.08);
     image-rendering: pixelated;
   }
 
   .pixel-border-sm {
     box-shadow:
       inset -2px -2px 0px 0px hsl(var(--pixel-dark)),
-      inset 2px 2px 0px 0px hsl(var(--pixel-glow) / 0.3);
+      inset 2px 2px 0px 0px hsl(var(--pixel-glow) / 0.65),
+      0 4px 10px hsl(var(--pixel-dark) / 0.07);
   }
 
   .glow-pink {
-    box-shadow: 0 0 20px hsl(var(--pixel-pink) / 0.5),
-                0 0 40px hsl(var(--pixel-pink) / 0.3);
+    box-shadow: 0 0 14px hsl(var(--pixel-peach) / 0.28);
   }
 
   .glow-text {
-    text-shadow: 0 0 10px hsl(var(--pixel-pink) / 0.8),
-                 0 0 20px hsl(var(--pixel-pink) / 0.5);
+    text-shadow: 0 0 8px hsl(var(--pixel-gold) / 0.35);
   }
 
   .text-glow-gold {

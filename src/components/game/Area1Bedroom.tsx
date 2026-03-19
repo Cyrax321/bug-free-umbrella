@@ -13,7 +13,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "Outside, the rain sings a gentle lullaby against the cherry blossom petals... Bubibu hugs his little pillow shaped like a heart, watching tiny raindrops race down the window. Each drop reminds him of Buba's giggle. He whispers to the moon, 'I hope she's looking at the same sky tonight...' The stars blink back, as if to say, 'She is, silly. She always is.'";
+const NARRATIVE = "The night before Anya's 18th birthday feels extra sparkly somehow. Bubibo sits by his window with a sleepy smile, planning the cutest little surprise he can. The moonlight drips across the room like silver ribbon while he whispers, 'Tomorrow has to feel like a hug she can step into.' Tiny glowing hearts begin floating around him, as if the night itself wants to help.";
 
 export default function Area1Bedroom({ heartsCollected, heartsNeeded, complete, onCollectHeart, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [tapped, setTapped] = useState<Set<number>>(new Set());
@@ -34,7 +34,8 @@ export default function Area1Bedroom({ heartsCollected, heartsNeeded, complete, 
   }, [tapped, complete, onCollectHeart]);
 
   return (
-    <section className="relative min-h-screen bg-pixel-night flex flex-col items-center justify-center overflow-hidden px-4 py-16">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16"
+      style={{ background: 'linear-gradient(180deg, hsl(206 92% 88%), hsl(253 82% 87%), hsl(344 90% 90%))' }}>
       {/* Pixel raindrops */}
       {Array.from({ length: 30 }).map((_, i) => (
         <div key={`rain-${i}`} className="absolute animate-rain pointer-events-none"
@@ -57,7 +58,7 @@ export default function Area1Bedroom({ heartsCollected, heartsNeeded, complete, 
         <div className="absolute -top-10 left-1/2 -translate-x-1/2">
           <PixelBubibu size={3} />
         </div>
-        <div className="font-pixel text-[7px] text-muted-foreground mt-1 text-center">Bubibu's bed</div>
+        <div className="font-pixel text-[7px] text-muted-foreground mt-1 text-center">Bubibo's room</div>
       </div>
 
       <NarrativeText text={NARRATIVE} visible={true} narrationEnabled={narrationEnabled} onPlayNarration={onPlayNarration} isNarrationPlaying={isNarrationPlaying} isNarrationLoading={isNarrationLoading} />
@@ -80,7 +81,7 @@ export default function Area1Bedroom({ heartsCollected, heartsNeeded, complete, 
           </>
         ) : (
           <>
-            <PixelHeart size={2} /> {heartsCollected}/{heartsNeeded} hearts
+            <PixelHeart size={2} /> {heartsCollected}/{heartsNeeded} birthday sparks
           </>
         )}
       </div>

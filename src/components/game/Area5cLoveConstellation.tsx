@@ -12,7 +12,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "High above the temple, the night sky becomes a canvas. The stars themselves want to celebrate Buba and Bubibu's love. 'Connect us!' they call out. 'Draw the shape of your love across the heavens, and it will shine forever!' Bubibu looks up with tears of joy. 'A heart made of stars... just for you, Buba.'";
+const NARRATIVE = "The sky becomes a giant birthday card, and the stars wait for Bubibo to connect them into one glowing shape. Line by line, the constellation turns into a giant heart for Anya, as if the whole night sky decided her 18th deserves its own decoration. It is sweet, a little dramatic, and exactly right.";
 
 // Star positions forming a heart constellation
 const CONSTELLATION_STARS = [
@@ -54,7 +54,7 @@ export default function Area5cLoveConstellation({ unlocked, complete, onComplete
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(240 30% 6%), hsl(260 25% 8%))' }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(217 97% 78%), hsl(263 83% 81%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Match all cards above to continue...
         </div>
@@ -64,7 +64,7 @@ export default function Area5cLoveConstellation({ unlocked, complete, onComplete
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16"
-      style={{ background: 'linear-gradient(180deg, hsl(240 35% 5%), hsl(260 30% 8%), hsl(280 25% 6%))' }}>
+      style={{ background: 'linear-gradient(180deg, hsl(217 97% 78%), hsl(263 83% 81%), hsl(45 100% 84%))' }}>
       
       {/* Background twinkles */}
       {Array.from({ length: 30 }).map((_, i) => (
@@ -127,7 +127,7 @@ export default function Area5cLoveConstellation({ unlocked, complete, onComplete
 
       <div className="font-pixel text-[8px] text-pixel-gold mt-4 flex items-center gap-1">
         {complete ? (
-          <><PixelSparkle size={2} /> Love constellation shines forever! Continue... <PixelSparkle size={2} /></>
+          <><PixelSparkle size={2} /> Birthday constellation complete! Continue... <PixelSparkle size={2} /></>
         ) : (
           <><PixelStar size={2} /> {connected.length}/{CONSTELLATION_STARS.length} stars connected</>
         )}

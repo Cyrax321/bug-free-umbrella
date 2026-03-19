@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "The night sky above Valentine Hill begins to shimmer. Shooting stars streak across the darkness, each one carrying a wish. 'Quick!' the moon calls out. 'Catch a star and make a wish for Buba! Every star you catch brings her closer.' Bubibu's eyes light up as he reaches toward the sky.";
+const NARRATIVE = "Above the hill, birthday stars start darting across the sky like glowing candles with tails. Bubibo reaches for them one by one, collecting wishes he wants to tuck into Anya's celebration. Each star feels like a tiny promise that her 18th year will be bright, gentle, and full of joy.";
 
 interface FallingStar {
   id: number;
@@ -66,7 +66,7 @@ export default function Area5bShootingStars({ unlocked, starsCaught, starsNeeded
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(270 20% 12%), hsl(240 30% 8%))' }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(214 96% 79%), hsl(258 81% 79%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Sync hearts above to continue...
         </div>
@@ -76,7 +76,7 @@ export default function Area5bShootingStars({ unlocked, starsCaught, starsNeeded
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16"
-      style={{ background: 'linear-gradient(180deg, hsl(240 30% 8%), hsl(260 25% 6%), hsl(280 20% 10%))' }}>
+      style={{ background: 'linear-gradient(180deg, hsl(214 96% 79%), hsl(258 81% 79%), hsl(337 87% 83%))' }}>
       
       {/* Moon */}
       <div className="mb-4 animate-pulse-glow"><PixelMoon size={4} /></div>
@@ -115,7 +115,7 @@ export default function Area5bShootingStars({ unlocked, starsCaught, starsNeeded
       </div>
       <div className="font-pixel text-[8px] text-pixel-gold mt-3 flex items-center gap-1">
         {complete ? (
-          <><PixelSparkle size={2} /> Wishes made! Continue... <PixelSparkle size={2} /></>
+          <><PixelSparkle size={2} /> Birthday wishes collected! Continue... <PixelSparkle size={2} /></>
         ) : (
           <><PixelStar size={2} /> {starsCaught}/{starsNeeded} stars caught</>
         )}

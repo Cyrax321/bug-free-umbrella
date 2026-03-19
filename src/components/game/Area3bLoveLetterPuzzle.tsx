@@ -12,12 +12,12 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "Scattered on the wind are the words of a love letter Bubibu wrote for Buba. The breeze tore it apart and mixed up all the words. 'Help me put them back together,' Bubibu pleads. 'She needs to know how I feel.'";
+const NARRATIVE = "The sweetest parts of Bubibo's birthday letter for Anya have floated into the air and landed out of order. He chases the words around, laughing at the mess, then asks for help putting them back together. 'Her 18th message has to sound perfect,' he says. 'No scrambled feelings allowed.'";
 
 const SENTENCES = [
-  { scrambled: ['my', 'you', 'sunshine', 'are'], correct: 'you are my sunshine' },
-  { scrambled: ['forever', 'love', 'I', 'you'], correct: 'I love you forever' },
-  { scrambled: ['heart', 'my', 'beats', 'you', 'for'], correct: 'my heart beats for you' },
+  { scrambled: ['birthday', 'eighteenth', 'happy', 'Anya'], correct: 'happy eighteenth birthday Anya' },
+  { scrambled: ['light', 'you', 'every', 'room', 'up'], correct: 'you light up every room' },
+  { scrambled: ['day', 'your', 'today', 'is', 'magic'], correct: 'today is your magic day' },
 ];
 
 export default function Area3bLoveLetterPuzzle({ unlocked, complete, onComplete, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
@@ -68,7 +68,7 @@ export default function Area3bLoveLetterPuzzle({ unlocked, complete, onComplete,
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(240 25% 10%), hsl(300 20% 10%))' }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(255 83% 86%), hsl(340 87% 88%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Repair the bridge above to continue...
         </div>
@@ -78,7 +78,7 @@ export default function Area3bLoveLetterPuzzle({ unlocked, complete, onComplete,
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16"
-      style={{ background: 'linear-gradient(180deg, hsl(300 20% 10%), hsl(330 25% 12%))' }}>
+      style={{ background: 'linear-gradient(180deg, hsl(266 84% 85%), hsl(343 90% 87%), hsl(41 100% 89%))' }}>
       
       <div className="mb-4 animate-float"><PixelEnvelope size={5} /></div>
 
@@ -132,7 +132,7 @@ export default function Area3bLoveLetterPuzzle({ unlocked, complete, onComplete,
       {complete && (
         <div className="mt-6 text-center animate-slide-up flex flex-col items-center">
           <div className="font-pixel text-[8px] text-pixel-gold flex items-center gap-1">
-            <PixelSparkle size={2} /> Love letter complete! Continue... <PixelSparkle size={2} />
+            <PixelSparkle size={2} /> Birthday letter complete! Continue... <PixelSparkle size={2} />
           </div>
           <div className="mt-4 animate-bounce-gentle"><PixelHeart size={3} /></div>
         </div>

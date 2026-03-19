@@ -15,7 +15,7 @@ interface StartScreenProps {
 export default function StartScreen({ soundEnabled, narrationEnabled, onToggleSound, onToggleNarration, onStart, musicPlaying, musicLoading, onToggleMusic }: StartScreenProps) {
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, hsl(330 30% 12%), hsl(340 25% 8%), hsl(270 20% 10%))' }}>
+      style={{ background: 'linear-gradient(180deg, hsl(38 100% 95%), hsl(198 57% 88%), hsl(343 61% 88%))' }}>
       
       {/* Pixel cherry blossom petals falling */}
       {Array.from({ length: 20 }).map((_, i) => (
@@ -35,7 +35,7 @@ export default function StartScreen({ soundEnabled, narrationEnabled, onToggleSo
         </div>
       ))}
 
-      {/* Floating pixel hearts */}
+      {/* Floating birthday sparkles */}
       {Array.from({ length: 8 }).map((_, i) => (
         <div
           key={i}
@@ -48,11 +48,11 @@ export default function StartScreen({ soundEnabled, narrationEnabled, onToggleSo
             transform: `scale(${0.5 + Math.random() * 0.8})`,
           }}
         >
-          <PixelHeart size={2} />
+          {i % 2 === 0 ? <PixelStar size={2} /> : <PixelHeart size={2} />}
         </div>
       ))}
 
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 text-center px-6 py-8 rounded-[28px] bg-card/70 backdrop-blur-sm pixel-border">
         {/* Pixel characters */}
         <div className="flex items-center justify-center gap-6 mb-4">
           <div className="animate-bounce-gentle"><PixelBubibu size={5} /></div>
@@ -61,13 +61,13 @@ export default function StartScreen({ soundEnabled, narrationEnabled, onToggleSo
         </div>
         
         <h1 className="font-pixel text-pixel-pink text-base sm:text-xl glow-text mb-1 leading-loose">
-          Buba &<br />Bubibu's
+          Anya &<br />Bubibo's
         </h1>
         <p className="font-pixel text-pixel-peach text-[8px] sm:text-[10px] mb-2 tracking-wider flex items-center justify-center gap-2">
-          <PixelPetal size={2} /> Pixel Valentine Adventure <PixelPetal size={2} />
+          <PixelPetal size={2} /> Pixel Birthday Adventure <PixelPetal size={2} />
         </p>
         <p className="font-body text-muted-foreground text-xs mb-8 max-w-[200px] mx-auto italic">
-          A cherry blossom love story told in pixels...
+          A tiny birthday surprise for Anya's 18th, told in pixels...
         </p>
 
         <div className="flex items-center justify-center gap-3 mb-6">
@@ -80,7 +80,7 @@ export default function StartScreen({ soundEnabled, narrationEnabled, onToggleSo
           onClick={onStart}
           className="font-pixel text-[10px] sm:text-xs bg-primary text-primary-foreground px-8 py-4 rounded-lg pixel-border glow-pink active:scale-95 transition-transform mb-6 hover:brightness-110"
         >
-          Begin Journey
+          Start Surprise
         </button>
 
         <div className="flex items-center justify-center gap-3">

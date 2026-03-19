@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "Between two gentle hills, a bridge once stood where Buba and Bubibu would meet under the cherry blossoms every spring. The wind scattered its pieces like puzzle hearts across the starlit sky. But love is patient, and love is brave. 'Even if every bridge in the world breaks,' Bubibu says with a smile, 'I'd build a thousand more just to reach you, Buba.' The stars twinkle in agreement.";
+const NARRATIVE = "A little bridge leads toward the final birthday hill, but the breeze has scattered its glowing planks across the path. Bubibo gathers every piece carefully, determined to rebuild the way before Anya arrives. 'No birthday surprise is complete without a proper entrance,' he says, fitting each piece back into place with a proud smile.";
 
 export default function Area3Bridge({ unlocked, bridgePieces, bridgePiecesNeeded, complete, onAddPiece, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [placed, setPlaced] = useState<Set<number>>(new Set());
@@ -32,7 +32,7 @@ export default function Area3Bridge({ unlocked, bridgePieces, bridgePiecesNeeded
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(330 20% 12%), hsl(240 25% 10%))' }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(203 90% 84%), hsl(261 84% 85%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Collect petals above to continue...
         </div>
@@ -41,7 +41,7 @@ export default function Area3Bridge({ unlocked, bridgePieces, bridgePiecesNeeded
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16" style={{ background: 'linear-gradient(180deg, hsl(240 25% 10%), hsl(260 20% 8%))' }}>
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16" style={{ background: 'linear-gradient(180deg, hsl(203 93% 84%), hsl(261 84% 84%), hsl(344 88% 86%))' }}>
       {/* Pixel stars */}
       {Array.from({ length: 25 }).map((_, i) => (
         <div key={i} className="absolute animate-sparkle pointer-events-none"
@@ -75,7 +75,7 @@ export default function Area3Bridge({ unlocked, bridgePieces, bridgePiecesNeeded
       </div>
       <div className="font-pixel text-[8px] text-pixel-gold mt-4 flex items-center gap-1">
         {complete ? (
-          <><PixelBridgePiece size={3} /> Bridge repaired! Continue...</>
+          <><PixelBridgePiece size={3} /> Birthday bridge repaired! Continue...</>
         ) : (
           <><PixelHeart size={2} /> Tap hearts to repair: {bridgePieces}/{bridgePiecesNeeded}</>
         )}

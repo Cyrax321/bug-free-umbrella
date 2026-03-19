@@ -15,7 +15,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "At the very top of Valentine Hill, where the sunset paints the sky in shades of strawberry and peach, a tiny picnic blanket waits under a canopy of cherry blossoms. Bubibu has arranged everything perfectly — flowers picked from the garden, a little cake with heart-shaped candles, and two cups of warm cocoa. He closes his eyes and makes the same wish he's made a thousand times before: 'Buba, right here, next to me... forever and always.' The cherry petals dance in the golden light, and somewhere, Buba smiles.";
+const NARRATIVE = "At the very top of the hill, the whole birthday surprise finally comes together. Bubibo has set out flowers, glowing lanterns, sweet treats, and the cutest little cake for Anya's 18th birthday. The sunset turns everything peach and pink while the air feels full of happy nerves, like the world is waiting with him to see her smile.";
 
 const PHOTOS = [
   '/photos/photo1.jpg', '/photos/photo2.jpg', '/photos/photo3.jpg', '/photos/photo4.jpg',
@@ -23,31 +23,93 @@ const PHOTOS = [
   '/photos/photo9.jpg', '/photos/photo10.jpg',
 ];
 
-const LOVE_MESSAGE = [
-  "Happy Valentine's Day, my love...",
-  "",
-  "My pretty Buba,",
-  "",
-  "I love you soooo much. Every single day, every single moment, my heart beats only for you. You are the most beautiful soul I've ever known, the sweetest smile I've ever seen, and the warmest hug I've ever felt — even from miles away.",
-  "",
-  "You make my world brighter just by existing. When I think of you, everything feels okay. When I hear your voice, my whole day lights up. When you laugh, I swear the stars get jealous.",
-  "",
-  "I built this little pixel world for you because I wanted you to feel how big my love is — bigger than any ocean between us, bigger than any timezone, bigger than anything.",
-  "",
-  "One day, we won't be pixels apart. One day, I'll hold your hand for real and never let go. Until then, every heartbeat of mine whispers your name.",
-  "",
-  "You are my forever, my always, my everything.",
-  "",
-  "I love you more than words could ever say,",
-  "more than any game could ever show,",
-  "more than the moon loves the night sky.",
-  "",
-  "Happy Valentine's Day, my pretty Buba.",
-  "I love you I love you I love you.",
-  "",
-  "Forever yours,",
-  "Your Bubibu 💕",
+const BIRTHDAY_SONG_LINES = [
+  'Happy birthday to you',
+  'Happy birthday to you',
+  'Happy birthday dear Anya',
+  'Happy birthday to you',
 ];
+
+const PARTY_GIFTS = [
+  'Teddy bear',
+  'Birthday crown',
+  'Star jar',
+  'Bracelet',
+  'Sweet box',
+  'Music box',
+  'Flower bundle',
+  'Love note',
+];
+
+const LOVE_MESSAGE = [
+  "Happy 18th Birthday, Anya...",
+  "",
+  "My dearest Anya,",
+  "",
+  "Today is all about you, and I wanted this little pixel world to feel like the softest, happiest birthday hug I could make for you.",
+  "",
+  "You make everything brighter just by being you. Your smile is comforting, your laugh is adorable, and your presence has this sweet way of making the whole world feel lighter.",
+  "",
+  "Eighteen is such a special number, and I hope this year brings you gentle mornings, exciting surprises, proud little moments, and so many reasons to smile until your cheeks hurt.",
+  "",
+  "I made this for you because you deserve to feel celebrated in every possible way. Every flower, lantern, star, and spark in this tiny adventure was placed here with you in mind.",
+  "",
+  "I hope your 18th birthday feels magical from beginning to end, and I hope you always remember how deeply loved, appreciated, and precious you are.",
+  "",
+  "Keep being soft, funny, beautiful, kind, and wonderfully you.",
+  "The world is so much cuter with Anya in it.",
+  "",
+  "Happy Birthday, my pretty girl.",
+  "Happy 18th birthday, Anya. I wish you the sweetest year ever.",
+  "",
+  "With all my love,",
+  "Your Bubibo",
+];
+
+function PixelGiftPile({ size = 4 }: { size?: number }) {
+  const s = size;
+  return (
+    <div className="inline-grid" style={{ gridTemplateColumns: `repeat(7, ${s}px)`, gap: 0 }}>
+      {[
+        ['_','_','_','R','_','_','_'],
+        ['_','_','R','R','R','_','_'],
+        ['B','B','B','R','B','B','B'],
+        ['B','P','B','R','B','P','B'],
+        ['B','P','B','R','B','P','B'],
+        ['B','B','B','R','B','B','B'],
+      ].flat().map((c, i) => (
+        <div key={i} style={{
+          width: s,
+          height: s,
+          backgroundColor:
+            c === '_' ? 'transparent' :
+            c === 'R' ? '#f28c6f' :
+            c === 'B' ? '#ffd56b' :
+            '#fff4f1'
+        }} />
+      ))}
+    </div>
+  );
+}
+
+function PixelMusicNote({ size = 3 }: { size?: number }) {
+  const s = size;
+  return (
+    <div className="inline-grid" style={{ gridTemplateColumns: `repeat(4, ${s}px)`, gap: 0 }}>
+      {[
+        ['_','_','N','N'],
+        ['_','_','N','N'],
+        ['_','_','N','_'],
+        ['_','_','N','_'],
+        ['_','N','N','_'],
+        ['N','N','_','_'],
+        ['N','N','_','_'],
+      ].flat().map((c, i) => (
+        <div key={i} style={{ width: s, height: s, backgroundColor: c === 'N' ? '#5ea8e8' : 'transparent' }} />
+      ))}
+    </div>
+  );
+}
 
 export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeeded, wishMade, onLightLantern, onMakeWish, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [cakeCut, setCakeCut] = useState(false);
@@ -90,7 +152,7 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(280 25% 10%), hsl(15 30% 15%))' }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(258 58% 88%), hsl(31 100% 87%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Sync the hearts above to continue...
         </div>
@@ -99,9 +161,9 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16" style={{ background: 'linear-gradient(180deg, hsl(15 40% 20%), hsl(340 50% 30%), hsl(15 60% 40%))' }}>
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16" style={{ background: 'linear-gradient(180deg, hsl(40 100% 90%), hsl(24 100% 84%), hsl(344 63% 87%))' }}>
       {/* Sunset sky overlay */}
-      <div className="absolute top-0 inset-x-0 h-1/3 opacity-60" style={{ background: 'linear-gradient(180deg, hsl(340 60% 45%), hsl(20 70% 50%), transparent)' }} />
+      <div className="absolute top-0 inset-x-0 h-1/3 opacity-45" style={{ background: 'linear-gradient(180deg, hsl(48 100% 81%), hsl(24 94% 74%), transparent)' }} />
 
       {/* Falling petals background */}
       {Array.from({ length: 15 }).map((_, i) => (
@@ -118,7 +180,7 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
         </div>
       ))}
 
-      {/* Floating love hearts */}
+      {/* Floating celebration hearts */}
       {floatingHearts.map((id, i) => (
         <div key={id} className="absolute animate-love-float pointer-events-none z-20"
           style={{ left: `${20 + Math.random() * 60}%`, bottom: '30%', animationDelay: `${i * 0.1}s` }}>
@@ -165,18 +227,32 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
           {/* Knife + Cut button */}
           {!cakeCut && (
             <button onClick={handleCutCake} className="font-pixel text-xs bg-primary text-primary-foreground px-8 py-4 rounded-lg pixel-border glow-pink active:scale-95 transition-transform animate-pulse-glow flex items-center gap-2 mt-4">
-              <PixelKnife size={3} /> Cut the Cake Together <PixelHeart size={2} />
+              <PixelKnife size={3} /> Cut Anya's Cake <PixelHeart size={2} />
             </button>
           )}
           {cakeCut && !showMessage && (
-            <div className="font-pixel text-[9px] text-pixel-gold glow-text animate-pulse-glow mt-4 flex items-center gap-2">
-              <PixelSparkle size={3} /> Cake cut! Making a wish... <PixelSparkle size={3} />
+            <div className="mt-4 flex flex-col items-center gap-4">
+              <div className="font-pixel text-[9px] text-pixel-gold glow-text animate-pulse-glow flex items-center gap-2">
+                <PixelSparkle size={3} /> Cake cut! Birthday song time... <PixelSparkle size={3} />
+              </div>
+              <div className="bg-card/75 backdrop-blur-sm rounded-2xl pixel-border-sm px-5 py-4 w-full max-w-xs">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <div className="animate-float"><PixelMusicNote size={2} /></div>
+                  <div className="animate-bounce-gentle"><PixelMusicNote size={3} /></div>
+                  <div className="animate-float" style={{ animationDelay: '0.3s' }}><PixelMusicNote size={2} /></div>
+                </div>
+                {BIRTHDAY_SONG_LINES.map((line, i) => (
+                  <p key={line} className="font-pixel text-[7px] text-center text-foreground/80 mb-2 animate-slide-up" style={{ animationDelay: `${i * 0.2}s` }}>
+                    {line}
+                  </p>
+                ))}
+              </div>
             </div>
           )}
         </div>
       )}
 
-      {/* === LOVE LETTER & CELEBRATION === */}
+      {/* === BIRTHDAY LETTER & CELEBRATION === */}
       {wishMade && (
         <div className="relative z-10 w-full max-w-sm flex flex-col items-center animate-slide-up mt-6">
           {/* Photos blinking in hearts */}
@@ -200,7 +276,7 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
           {/* Envelope opening */}
           <div className="mb-4 animate-heartbeat"><PixelEnvelope size={5} /></div>
 
-          {/* Big love message */}
+          {/* Big birthday message */}
           {showMessage && (
             <div className="animate-letter-unfold bg-card/80 backdrop-blur-sm rounded-lg pixel-border p-6 w-full">
               <div className="flex justify-center mb-4">
@@ -210,8 +286,8 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
                 <p key={i} className={`font-pixel leading-relaxed mb-1 text-center ${
                   i === 0 ? 'text-[10px] text-pixel-gold glow-text' :
                   i === 2 ? 'text-[9px] text-pixel-pink' :
-                  line.includes('I love you I love you') ? 'text-[10px] text-pixel-pink glow-text animate-pulse-glow' :
-                  line.includes('Your Bubibu') ? 'text-[9px] text-pixel-peach' :
+                  line.includes('Happy 18th birthday, Anya') ? 'text-[10px] text-pixel-pink glow-text animate-pulse-glow' :
+                  line.includes('Your Bubibo') ? 'text-[9px] text-pixel-peach' :
                   line === '' ? 'h-2' :
                   'text-[7px] text-foreground/80'
                 }`}>
@@ -236,6 +312,37 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
                     ))}
                   </div>
 
+                  <div className="bg-card/70 rounded-2xl pixel-border-sm p-4 mb-4">
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                      <PixelMusicNote size={2} />
+                      <p className="font-pixel text-[8px] text-pixel-sky">Birthday Party Chorus</p>
+                      <PixelMusicNote size={2} />
+                    </div>
+                    {BIRTHDAY_SONG_LINES.map((line, i) => (
+                      <p key={`${line}-${i}`} className="font-pixel text-[6px] text-center text-foreground/75 mb-2">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+
+                  <div className="bg-card/70 rounded-2xl pixel-border-sm p-4 mb-4">
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <PixelRibbon size={2} />
+                      <p className="font-pixel text-[8px] text-pixel-peach">A mountain of gifts for Anya</p>
+                      <PixelRibbon size={2} />
+                    </div>
+                    <div className="grid grid-cols-4 gap-3 justify-items-center">
+                      {PARTY_GIFTS.map((gift, i) => (
+                        <div key={gift} className="flex flex-col items-center gap-1 animate-slide-up" style={{ animationDelay: `${i * 0.08}s` }}>
+                          <div className={i % 2 === 0 ? 'animate-bounce-gentle' : 'animate-float'}>
+                            <PixelGiftPile size={3} />
+                          </div>
+                          <span className="font-pixel text-[5px] text-center text-foreground/70 leading-tight">{gift}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Row of tiny hearts */}
                   <div className="flex justify-center gap-1 mb-4">
                     {Array.from({ length: 12 }).map((_, i) => (
@@ -247,10 +354,10 @@ export default function Area6ValentineHill({ unlocked, lanternsLit, lanternsNeed
 
                   {/* Footer */}
                   <div className="text-center mt-6">
-                    <p className="font-pixel text-[8px] text-pixel-peach mb-2">Next level: Buba & Bubibu, together.</p>
+                    <p className="font-pixel text-[8px] text-pixel-peach mb-2">Next level: Anya's happiest year yet.</p>
                     <div className="flex justify-center gap-1 items-center">
                       <PixelStar size={2} className="animate-sparkle" />
-                      <span className="font-pixel text-[6px] text-muted-foreground/60">Made with love by Bubibu</span>
+                      <span className="font-pixel text-[6px] text-muted-foreground/60">Made with love by Bubibo</span>
                       <PixelHeart size={1} />
                       <div className="animate-sparkle" style={{ animationDelay: '0.5s' }}><PixelStar size={2} /></div>
                     </div>

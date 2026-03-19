@@ -14,16 +14,16 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "In a cozy little workshop filled with pink tissue paper and golden ribbons, Bubibu carefully wraps each gift for Buba. A tiny teddy bear, a heart-shaped locket, a jar of paper stars with love notes inside, a handmade bracelet, chocolate hearts, and a music box that plays their song. 'Every gift is a piece of my heart,' he whispers, tying each bow with trembling, happy hands. 'I hope she knows how much she means to me.'";
+const NARRATIVE = "Bubibo sneaks into a tiny wrapping room where pastel boxes, ribbons, and glittery paper are stacked in cheerful little towers. He picks out presents for Anya one by one, making sure every bow is neat and every detail feels soft and special. 'If her smile gets even bigger with each gift,' he says, grinning to himself, 'then I am doing this right.'";
 
 const GIFT_NAMES = [
   { name: 'Teddy Bear', icon: '🧸', color: 'bg-pixel-peach/30' },
-  { name: 'Heart Locket', icon: '💝', color: 'bg-pixel-pink/30' },
+  { name: 'Birthday Tiara', icon: '👑', color: 'bg-pixel-pink/30' },
   { name: 'Star Jar', icon: '✨', color: 'bg-pixel-gold/30' },
-  { name: 'Bracelet', icon: '💎', color: 'bg-pixel-lavender/30' },
-  { name: 'Chocolates', icon: '🍫', color: 'bg-pixel-peach/20' },
+  { name: 'Charm Bracelet', icon: '💎', color: 'bg-pixel-lavender/30' },
+  { name: 'Sweet Treats', icon: '🍫', color: 'bg-pixel-peach/20' },
   { name: 'Music Box', icon: '🎵', color: 'bg-pixel-sky/30' },
-  { name: 'Love Letter', icon: '💌', color: 'bg-pixel-pink/25' },
+  { name: 'Birthday Letter', icon: '💌', color: 'bg-pixel-pink/25' },
   { name: 'Flower Crown', icon: '🌸', color: 'bg-pixel-lavender/25' },
 ];
 
@@ -73,7 +73,7 @@ export default function Area1bGiftWrapping({ unlocked, complete, giftsWrapped, g
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(330 30% 12%), hsl(15 25% 12%))' }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(38 100% 92%), hsl(24 100% 86%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Light the path above to continue...
         </div>
@@ -83,7 +83,7 @@ export default function Area1bGiftWrapping({ unlocked, complete, giftsWrapped, g
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16"
-      style={{ background: 'linear-gradient(180deg, hsl(330 25% 14%), hsl(15 30% 12%), hsl(340 20% 10%))' }}>
+      style={{ background: 'linear-gradient(180deg, hsl(44 100% 90%), hsl(28 100% 84%), hsl(345 88% 86%))' }}>
       
       {/* Floating ribbons background */}
       {Array.from({ length: 12 }).map((_, i) => (
@@ -138,7 +138,7 @@ export default function Area1bGiftWrapping({ unlocked, complete, giftsWrapped, g
 
       <div className="font-pixel text-[8px] text-pixel-pink mt-6 flex items-center gap-1">
         {complete ? (
-          <><PixelSparkle size={2} /> All gifts wrapped with love! Continue... <PixelSparkle size={2} /></>
+          <><PixelSparkle size={2} /> All birthday gifts are ready! Continue... <PixelSparkle size={2} /></>
         ) : (
           <><PixelGiftBox size={2} wrapped /> {giftsWrapped}/{giftsNeeded} gifts wrapped</>
         )}

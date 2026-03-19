@@ -21,10 +21,10 @@ const PHOTOS = [
 ];
 
 const CAPTIONS = [
-  "Memory unlocked", "She smiled, and his world got brighter", "Same sky, same heart",
-  "Distance means nothing when love is everything", "Every moment with you is my favorite",
-  "Two hearts, one story", "You are my sunshine, Buba", "Together is our favorite place to be",
-  "Love grows here", "My best adventure is you", "Forever starts with us", "You make everything beautiful",
+  "Memory unlocked", "Anya's smile makes every day softer", "Tiny moments with you feel huge",
+  "Every photo of you belongs in a treasure box", "You make ordinary days feel sparkly",
+  "Eighteen looks lovely on you already", "Sunshine follows you everywhere, Anya", "You turn memories into favorite places",
+  "Your laugh could power this whole town", "This day was always meant to celebrate you", "So many sweet moments, one sweet girl", "The world looks cuter with you in it",
 ];
 
 const HOUSE_COLORS = [
@@ -33,14 +33,14 @@ const HOUSE_COLORS = [
   'bg-pixel-gold/15', 'bg-pixel-sky/15', 'bg-pixel-pink/25', 'bg-pixel-lavender/25',
 ];
 
-const NARRATIVE = "Welcome to the coziest little village in the world, where every tiny house holds a precious memory of Buba and Bubibu. Paper lanterns sway gently along the cobblestone path, and the sweet scent of cherry blossoms fills the evening air. 'Do you remember this one?' Bubibu asks the moon. 'That was the day she laughed so hard she got hiccups, and I fell in love all over again.' Each door hides a treasure.";
+const NARRATIVE = "Memory Town is where Bubibo keeps all the little moments that remind him of Anya. Each tiny house glows with a photo, a laugh, or a soft feeling he never wanted to forget. He lights them one by one until the whole street shines like a scrapbook made just for her 18th birthday.";
 
 export default function Area4MemoryTown({ unlocked, housesOpened, housesNeeded, complete, onOpenHouse, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [selectedHouse, setSelectedHouse] = useState<number | null>(null);
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(260 20% 8%), hsl(330 15% 10%))' }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(211 90% 84%), hsl(277 80% 86%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Repair the bridge above to continue...
         </div>
@@ -49,7 +49,7 @@ export default function Area4MemoryTown({ unlocked, housesOpened, housesNeeded, 
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center overflow-hidden px-4 py-16" style={{ background: 'linear-gradient(180deg, hsl(260 20% 8%), hsl(330 15% 10%), hsl(260 15% 10%))' }}>
+    <section className="relative min-h-screen flex flex-col items-center overflow-hidden px-4 py-16" style={{ background: 'linear-gradient(180deg, hsl(207 92% 84%), hsl(278 78% 86%), hsl(339 89% 88%))' }}>
       <div className="flex gap-6 mb-4">
         {Array.from({ length: 6 }).map((_, i) => (
           <div key={i} className={`transition-all duration-700 ${i < housesOpened.length ? 'opacity-100 animate-flicker' : 'opacity-20'}`}>
@@ -84,7 +84,7 @@ export default function Area4MemoryTown({ unlocked, housesOpened, housesNeeded, 
       )}
       <div className="font-pixel text-[8px] text-pixel-peach mt-6 flex items-center gap-1">
         {complete ? (
-          <><PixelLantern size={2} lit /> All lanterns lit! Continue...</>
+          <><PixelLantern size={2} lit /> All memory lanterns lit! Continue...</>
         ) : (
           <><PixelHouse size={2} /> {housesOpened.length}/{housesNeeded} houses opened</>
         )}

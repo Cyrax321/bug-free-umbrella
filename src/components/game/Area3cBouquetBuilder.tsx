@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "In the enchanted meadow beyond the bridge, the most beautiful flowers in the world bloom only when touched by true love. Bubibu kneels down, gently picking each one for Buba's bouquet. Pink roses for passion, lavender for devotion, white lilies for purity, and cherry blossoms for everlasting love. 'The prettiest bouquet for the prettiest girl in the whole universe,' he says, blushing.";
+const NARRATIVE = "In a bright meadow beyond the bridge, Bubibo picks flowers for Anya's birthday bouquet. He chooses the softest colors, the fluffiest petals, and the happiest blooms he can find, building something that feels as warm as her smile. Every flower looks like it was waiting all year just to be part of her day.";
 
 const FLOWER_TYPES = [
   { name: 'Pink Rose', colors: ['#e85d75', '#f4a0b0', '#fde4ec'] },
@@ -64,7 +64,7 @@ export default function Area3cBouquetBuilder({ unlocked, complete, flowersCollec
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(120 15% 10%), hsl(150 20% 8%))' }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(130 55% 85%), hsl(48 100% 88%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Complete the puzzle above to continue...
         </div>
@@ -74,7 +74,7 @@ export default function Area3cBouquetBuilder({ unlocked, complete, flowersCollec
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16"
-      style={{ background: 'linear-gradient(180deg, hsl(120 15% 10%), hsl(150 20% 12%), hsl(130 15% 8%))' }}>
+      style={{ background: 'linear-gradient(180deg, hsl(130 57% 84%), hsl(170 57% 80%), hsl(46 100% 87%))' }}>
       
       {/* Background petals */}
       {Array.from({ length: 15 }).map((_, i) => (
@@ -88,7 +88,7 @@ export default function Area3cBouquetBuilder({ unlocked, complete, flowersCollec
 
       {/* Bouquet preview */}
       <div className="mt-6 flex flex-col items-center">
-        <div className="font-pixel text-[7px] text-pixel-pink mb-2">Buba's Bouquet</div>
+        <div className="font-pixel text-[7px] text-pixel-pink mb-2">Anya's Birthday Bouquet</div>
         <div className="flex flex-wrap gap-1 justify-center bg-muted/20 rounded-lg px-4 py-3 pixel-border-sm min-h-[50px] min-w-[120px]">
           {Array.from(picked).map(id => {
             const type = positions.find(p => p.id === id)?.type ?? 0;
@@ -117,7 +117,7 @@ export default function Area3cBouquetBuilder({ unlocked, complete, flowersCollec
 
       <div className="font-pixel text-[8px] text-pixel-pink mt-4 flex items-center gap-1">
         {complete ? (
-          <><PixelFlower size={2} /> Beautiful bouquet complete! Continue... <PixelFlower size={2} /></>
+          <><PixelFlower size={2} /> Birthday bouquet complete! Continue... <PixelFlower size={2} /></>
         ) : (
           <><PixelFlower size={2} /> {flowersCollected}/{flowersNeeded} flowers picked</>
         )}

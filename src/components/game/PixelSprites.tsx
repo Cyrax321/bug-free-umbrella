@@ -1,11 +1,11 @@
 /**
  * Pure CSS pixel art sprites — no emojis!
  * Each sprite is a tiny grid of colored divs for that authentic retro look.
- * Buba and Bubibu use actual character images.
+ * Anya and Bubibo use actual character images.
  */
 
-import bubaImg from '@/assets/buba-character.png';
-import bubibuImg from '@/assets/bubibu-character.png';
+import bubaImg from '@/assets/her c.png';
+import bubibuImg from '@/assets/me.png';
 
 const px = (color: string) => `bg-[${color}]`;
 
@@ -245,13 +245,37 @@ export function PixelArrowDown({ size = 4, className = '' }: { size?: number; cl
 // ---- BUBA (kawaii chibi girl) ----
 export function PixelBuba({ size = 3, className = '' }: { size?: number; className?: string }) {
   const w = size * 24;
-  return <img src={bubaImg} alt="Buba" className={`inline-block ${className}`} style={{ width: w, height: 'auto', mixBlendMode: 'screen' }} />;
+  const h = size * 32;
+  return (
+    <span
+      className={`inline-block overflow-hidden ${className}`}
+      style={{ width: w, height: h, imageRendering: 'pixelated' }}
+    >
+      <img
+        src={bubaImg}
+        alt="Anya"
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', imageRendering: 'pixelated' }}
+      />
+    </span>
+  );
 }
 
-// ---- BUBIBU (kawaii chibi boy) ----
+// ---- BUBIBO (kawaii chibi boy) ----
 export function PixelBubibu({ size = 3, className = '' }: { size?: number; className?: string }) {
   const w = size * 24;
-  return <img src={bubibuImg} alt="Bubibu" className={`inline-block ${className}`} style={{ width: w, height: 'auto', mixBlendMode: 'screen' }} />;
+  const h = size * 32;
+  return (
+    <span
+      className={`inline-block overflow-hidden ${className}`}
+      style={{ width: w, height: h, imageRendering: 'pixelated' }}
+    >
+      <img
+        src={bubibuImg}
+        alt="Bubibo"
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', imageRendering: 'pixelated' }}
+      />
+    </span>
+  );
 }
 
 // ---- RAINDROP ----

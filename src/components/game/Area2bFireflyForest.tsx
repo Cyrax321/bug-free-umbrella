@@ -14,7 +14,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "The Firefly Forest glows softly between the garden and the bridge. Tiny golden lights float among the ancient cherry trees, each one a little spark of hope. 'Catch enough fireflies,' the old trees whisper, 'and they'll light the way through the darkness. Just like love does.' Bubibu reaches out gently, cupping the warm glow in his hands.";
+const NARRATIVE = "Beyond the garden, a firefly forest wakes up in little golden blinks. Bubibo laughs softly as he catches the lights one by one, because each glowing speck will become part of Anya's birthday lantern trail. The trees hum around him, turning the whole forest into a secret helper for the surprise.";
 
 // Firefly pixel sprite
 function PixelFirefly({ size = 3 }: { size?: number }) {
@@ -59,7 +59,7 @@ export default function Area2bFireflyForest({ unlocked, firefliesCaught, firefli
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(160 20% 8%), hsl(200 25% 6%))' }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(176 44% 78%), hsl(205 74% 72%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Collect petals above to continue...
         </div>
@@ -69,7 +69,7 @@ export default function Area2bFireflyForest({ unlocked, firefliesCaught, firefli
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16"
-      style={{ background: 'linear-gradient(180deg, hsl(160 15% 6%), hsl(200 20% 5%), hsl(220 25% 8%))' }}>
+      style={{ background: 'linear-gradient(180deg, hsl(173 44% 76%), hsl(201 70% 69%), hsl(219 53% 60%))' }}>
       
       {/* Dark forest trees */}
       <div className="flex gap-10 mb-4 opacity-40">
@@ -100,7 +100,7 @@ export default function Area2bFireflyForest({ unlocked, firefliesCaught, firefli
       </div>
       <div className="font-pixel text-[8px] text-pixel-gold mt-3 flex items-center gap-1">
         {complete ? (
-          <><PixelStar size={2} /> Forest lit! Continue... <PixelStar size={2} /></>
+          <><PixelStar size={2} /> Lantern lights collected! Continue... <PixelStar size={2} /></>
         ) : (
           <><PixelStar size={2} /> {firefliesCaught}/{firefliesNeeded} fireflies</>
         )}

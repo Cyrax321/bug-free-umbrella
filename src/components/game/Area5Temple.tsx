@@ -12,7 +12,7 @@ interface Props {
   isNarrationLoading?: boolean;
 }
 
-const NARRATIVE = "In the ancient Heart Sync Temple, cherry blossoms grow through the stone floors and the air shimmers with soft golden light. Legend says that when two hearts beat as one, the temple doors will open to reveal the path to eternal togetherness. Buba's heart beats with warmth, and Bubibu's beats with longing. 'Can you feel it?' the temple whispers. 'You've always been in rhythm... you just forgot to listen.'";
+const NARRATIVE = "At the Birthday Beat Pavilion, two glowing hearts pulse beneath a shower of sparkles. One shines for Anya, the other for Bubibo, and when their rhythm lines up, the final part of the celebration can begin. It feels less like magic and more like the universe clapping along for her big day.";
 
 export default function Area5Temple({ unlocked, complete, onSync, narrationEnabled, onPlayNarration, isNarrationPlaying, isNarrationLoading }: Props) {
   const [leftPhase, setLeftPhase] = useState(0);
@@ -45,7 +45,7 @@ export default function Area5Temple({ unlocked, complete, onSync, narrationEnabl
 
   if (!unlocked) {
     return (
-      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(260 15% 10%), hsl(270 20% 12%))' }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(205 95% 83%), hsl(267 85% 85%))' }}>
         <div className="font-pixel text-[8px] text-muted-foreground/40 animate-pulse-glow flex items-center gap-2">
           <PixelLock size={3} /> Open houses above to continue...
         </div>
@@ -54,7 +54,7 @@ export default function Area5Temple({ unlocked, complete, onSync, narrationEnabl
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16" style={{ background: 'linear-gradient(180deg, hsl(270 20% 12%), hsl(280 25% 10%))' }}>
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-16" style={{ background: 'linear-gradient(180deg, hsl(203 95% 82%), hsl(267 85% 85%), hsl(45 100% 87%))' }}>
       {Array.from({ length: 10 }).map((_, i) => (
         <div key={i} className="absolute pointer-events-none animate-float-slow opacity-20"
           style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 4}s` }}>
@@ -63,7 +63,7 @@ export default function Area5Temple({ unlocked, complete, onSync, narrationEnabl
       ))}
       <div className="relative mb-6 flex flex-col items-center">
         <PixelTemple size={6} />
-        <div className="font-pixel text-[8px] text-pixel-lavender text-center mt-2">Heart Sync Temple</div>
+        <div className="font-pixel text-[8px] text-pixel-lavender text-center mt-2">Birthday Beat Pavilion</div>
       </div>
       <NarrativeText text={NARRATIVE} visible={true} className="mb-8" narrationEnabled={narrationEnabled} onPlayNarration={onPlayNarration} isNarrationPlaying={isNarrationPlaying} isNarrationLoading={isNarrationLoading} />
       <div className="flex items-center gap-12 mb-8">
@@ -71,7 +71,7 @@ export default function Area5Temple({ unlocked, complete, onSync, narrationEnabl
           <div className="transition-transform" style={{ transform: `scale(${complete || syncing ? 1 : leftScale})` }}>
             <PixelHeart size={5} />
           </div>
-          <span className="font-pixel text-[6px] text-pixel-pink mt-1 block">Buba</span>
+          <span className="font-pixel text-[6px] text-pixel-pink mt-1 block">Anya</span>
           <div className="mt-1"><PixelBuba size={3} /></div>
         </div>
         <div className={`transition-all duration-500 ${complete || syncing ? 'animate-pulse-glow' : 'opacity-40'}`}>
@@ -81,7 +81,7 @@ export default function Area5Temple({ unlocked, complete, onSync, narrationEnabl
           <div className="transition-transform" style={{ transform: `scale(${complete || syncing ? 1 : rightScale})` }}>
             <PixelHeart size={5} />
           </div>
-          <span className="font-pixel text-[6px] text-pixel-pink mt-1 block">Bubibu</span>
+          <span className="font-pixel text-[6px] text-pixel-pink mt-1 block">Bubibo</span>
           <div className="mt-1"><PixelBubibu size={3} /></div>
         </div>
       </div>
@@ -97,7 +97,7 @@ export default function Area5Temple({ unlocked, complete, onSync, narrationEnabl
       {complete && (
         <div className="text-center animate-slide-up flex flex-col items-center">
           <div className="font-pixel text-[8px] text-pixel-gold mb-4 flex items-center gap-1">
-            <PixelSparkle size={2} /> Hearts synchronized! The temple gates open... <PixelSparkle size={2} />
+            <PixelSparkle size={2} /> Birthday beats synchronized! The gates open... <PixelSparkle size={2} />
           </div>
           <div className="flex gap-2 animate-heartbeat">
             <PixelHeart size={4} />
